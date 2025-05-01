@@ -1,0 +1,21 @@
+{
+  "name": "ace-utils",
+  "version": "1.0.0",
+  "author": "Jussi Mänttäri",
+  "description": "Utilities for web apps.",
+  "license": "ISC",
+  "homepage": "https://github.com/jtmsdk/ace-utils#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtmsdk/ace-utils.git"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.6",
+    "typescript": "^5.8.2"
+  }
+}
