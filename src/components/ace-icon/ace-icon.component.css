@@ -1,0 +1,17 @@
+.ace-icon {
+    display: inline-flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+
+    svg {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        color: currentColor;
+    }
+}

@@ -1,0 +1,86 @@
+.ace-dialog {
+    --ace-br-modal: var(--ace-border-radius-m);
+    
+    display: block;
+    box-sizing: border-box;
+    box-shadow: var(--ace-box-shadow-s);
+    border-radius: var(--ace-br-modal);
+    pointer-events: all;
+    background: white;
+    max-width: 100%;
+    width: auto;
+
+    .ace-dialog-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        border-top-left-radius: calc(var(--ace-br-modal) * 0.8);
+        border-top-right-radius: calc(var(--ace-br-modal) * 0.8);
+        padding: 1rem;
+        font-weight: 400;
+        font-size: 1.1em;
+
+        .ace-icon {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            margin-right: 0.8rem;
+        }
+    }
+    
+    .ace-dialog-body {
+        padding: 0 1rem;
+        p:first-child { margin-top: 0; }
+        p:last-child { margin-bottom: 0; }
+    }
+    
+    .ace-dialog-footer {
+        display: flex;
+        justify-content: end;
+        padding: 1rem;
+        text-align: right;
+        
+        .ace-button {
+            margin-left: 1rem;
+        }
+    }
+    
+    &[type=confirm] {
+        .ace-dialog-header {
+            color: var(--ace-color-gray-50);
+        }
+    }
+    &[type=info] {
+        .ace-dialog-header {
+            color: var(--ace-color-info);
+        }
+    }
+    &[type=success] {
+        .ace-dialog-header {
+            color: var(--ace-color-success);
+        }
+    }
+    &[type=warning] {
+        .ace-dialog-header {
+            color: var(--ace-color-warning);
+        }
+    }
+    &[type=critical] {
+        .ace-dialog-header {
+            color: var(--ace-color-critical);
+        }
+    }
+
+    &[size=small] {
+        width: 400px;
+    }
+    &[size=medium] {
+        width: 600px;
+    }
+    &[size=large] {
+        width: 900px;
+    }
+    &[size=xlarge] {
+        width: 1200px;
+    }
+}

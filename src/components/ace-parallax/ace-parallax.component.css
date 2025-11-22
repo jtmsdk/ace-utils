@@ -1,0 +1,27 @@
+.ace-parallax {
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.ace-parallax-layer {
+    /* stack layers on top of each other */
+    position: absolute;
+    top: 0; left: 0;
+    
+    /* center all content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    
+    /* background image handling */
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-size: cover;    
+}

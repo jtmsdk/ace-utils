@@ -1,0 +1,111 @@
+@keyframes ace-lightbox-enter {
+    from { transform: rotateY(90deg); opacity: 0; }
+    to { transform: rotateY(0deg); opacity: 1; }
+}
+.ace-lightbox {
+    animation: ace-lightbox-enter 0.4s linear;
+    &.leave {
+        transition: all 0.4s linear;    
+        transform: rotateY(90deg);
+        opacity: 0;
+    }
+    --ace-margin: 10px 14px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.9);
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    overflow: hidden;
+
+    color: white;
+    a {color: inherit;}
+
+    .ace-lightbox-header {
+        position: absolute;
+        z-index: 3;
+        top: 0; left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        width: 100%;
+        transition: opacity 0.3s ease;
+        opacity: 0;
+        &.open { 
+            opacity: 1; 
+        }
+        .slidenro {
+            background: rgba(0,0,0,0.6);
+            padding: var(--ace-margin);
+        }
+        .buttons {
+            display: flex;
+            align-items: center;
+            background: rgba(0,0,0,0.6);
+            .button {
+                padding: var(--ace-margin);
+                &:hover {
+                    background:rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+    }
+
+    .ace-lightbox-body {
+        max-width: 100%;
+        max-height: 100%;
+        user-select: none;
+        overflow: hidden;
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .ace-ligthtbox-caption {
+            position: relative;
+            box-sizing: border-box;
+            padding: var(--ace-margin);
+            margin: 0;
+            max-width: 1200px;
+            user-select: text;
+            font-size: 0.9em;
+            z-index: 3;
+        }
+
+        .next, .prev {
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: clamp(100px, 10%, 15vw);
+            height: 100%;
+            transition: all 0.2s linear;
+            font-weight: bold;
+            font-size: 80px;
+            color: white;
+            user-select: none;
+            cursor: pointer;
+            
+            opacity: 0;
+            &:hover {opacity: 1;}
+        }
+        .prev {
+            text-shadow: 1px 1px 8px #000000;
+            top: 0; left: 0;
+        }
+        .next {
+            text-shadow: -1px 1px 8px #000000;
+            top: 0; right: 0;
+        }
+    }
+}

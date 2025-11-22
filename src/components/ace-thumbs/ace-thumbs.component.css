@@ -1,0 +1,45 @@
+.ace-thumbs {
+    display: grid;
+    box-sizing: border-box;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-rows: auto;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 3rem auto;
+    max-width: 640px; /* 3 cols */
+}
+
+@keyframes ace-thumb {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.ace-thumb {
+    display: inline-block;
+    box-sizing: border-box;
+    opacity: 0;
+    &.loaded {
+        animation: ace-thumb 1s ease;
+        animation-fill-mode: forwards;
+    }
+    margin: 0;
+    width: 200px;
+    max-height: 140px;
+    aspect-ratio: 200 / 140;
+    object-fit: cover;
+    background: white;
+    cursor: pointer;
+
+    padding: 8px;
+    border: 1px solid var(--ace-border-color);
+    border-radius: 8px;
+    box-shadow: var(--ace-box-shadow-s);
+    transition: all 0.3s ease;
+    
+    &:hover {
+        filter: brightness(110%) contrast(120%);
+        box-shadow: var(--ace-box-shadow-m);
+    }
+}

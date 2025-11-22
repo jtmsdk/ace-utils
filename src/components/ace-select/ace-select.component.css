@@ -1,0 +1,32 @@
+.ace-select {
+    display: block;
+    box-sizing: border-box;
+    max-width: 100%;
+    
+    .ace-select-trigger {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    .ace-select-button {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        width: 100%;
+        padding: 8px;
+        span {
+            flex-grow: 1;
+        }
+        .ace-icon[name=chevron-down] {
+            width: 0.8rem;
+            height: 0.8rem;
+        }
+    }
+    .ace-select-clear {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0 0.5rem;
+        align-self: flex-end;
+    }
+}

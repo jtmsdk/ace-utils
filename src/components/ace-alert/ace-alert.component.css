@@ -1,0 +1,95 @@
+#ace-alerts {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    background: transparent;
+    padding: 1rem;
+    pointer-events: none;
+    z-index: var(--ace-z-index-alerts);
+    
+    .ace-alert {
+        animation: ace-animation-slidein-top 1s ease, ace-animation-fadein 0.5s linear;
+        pointer-events: all;
+        margin-bottom: 1rem;
+    }
+}
+
+.ace-alert {
+    --ace-type-color: var(--ace-color-gray-70);
+
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    max-width: 800px;
+    margin: auto;
+    padding: 12px;
+    background: white;
+    box-shadow: var(--ace-box-shadow-m);
+    border-left: 8px solid var(--ace-type-color);
+    
+    .ace-alert-close {
+        position: absolute;
+        box-sizing: content-box;
+        right: 0.5rem; top: 0.5rem;
+        padding: 0.5rem;
+        color: inherit;
+        cursor: pointer;
+    }
+
+    .ace-alert-icon {
+        width: 20px;
+        height: 20px;
+        margin: 2px 12px 0 0;
+        color: var(--ace-type-color);
+    }
+
+    .ace-alert-header {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        font-weight: 500;
+        font-size: 1rem;
+        
+        & + * {
+            margin-top: 0.5rem;
+        }
+    }
+    
+    .ace-alert-body {
+        display: block; 
+    }
+
+    
+    &[type=info] {
+        --ace-type-color: var(--ace-color-info);
+        border-color: var(--ace-color-info);
+        background: var(--ace-color-blue-95);
+    }
+    &[type=success] {
+        --ace-type-color: var(--ace-color-success);
+        border-color: var(--ace-color-success);
+        background: var(--ace-color-green-95);
+    }
+    &[type=warning] {
+        --ace-type-color: var(--ace-color-warning);
+        border-color: var(--ace-color-warning);
+        background: var(--ace-color-orange-95);
+    }
+    &[type=critical] {
+        --ace-type-color: var(--ace-color-critical);
+        border-color: var(--ace-color-critical);
+        background: var(--ace-color-red-95);
+    }
+    &[type=black] {
+        --ace-type-color: black;
+        background: black;
+        color: white;
+     
+        a {
+            color: white;
+            text-decoration: underline;
+            border: 0;
+        }
+    }
+}

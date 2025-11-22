@@ -1,0 +1,43 @@
+.ace-article {    
+    animation: ace-animation-fadein 0.3s ease;
+    box-sizing: border-box;
+    max-width: 1000px;
+    margin: auto;
+    
+    .ace-article-header {
+        margin-bottom: 2rem;
+        text-align: center;
+
+        .ace-article-title {
+            margin: 0 0 2rem 0;
+        }
+        .ace-article-subtitle {
+            margin: 2rem 0 2rem 0;
+            color: var(--ace-color-gray-50);
+        }
+        .ace-article-date {
+            display: inline-block;
+            font-size: 1.1rem;   
+            color: var(--ace-color-gray-50);
+        }
+        .ace-article-image {
+            margin: 2rem auto;
+            width: 100%;  
+        }
+    }
+
+    .ace-article-body {
+        max-width: 800px;
+        margin: auto;
+    }
+    
+    h1, h2, h3, h4 {
+        margin: 2.5rem auto;
+        text-align: center;
+    }
+
+    p, ol, ul {
+        margin: 1.5rem auto;
+        line-height: 1.5;
+    }
+}

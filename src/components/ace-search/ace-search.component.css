@@ -1,0 +1,32 @@
+.ace-search {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+
+    input {
+        padding-right: 2.5rem;
+        width: 100%;
+    }
+    .ace-icon {
+        position: absolute;
+        top: 0.65rem; 
+        right: 0.7rem;
+        width: 1.2em; 
+        height: 1.2em;
+        cursor: pointer;
+        color: var(--ace-color-gray-70);
+        
+        &.search-icon {
+            pointer-events: none;
+        }
+    }
+    .ace-spinner {
+        position: absolute;
+        top: calc((40px - 20px)/2);
+        right: 2.5rem;
+    }
+    &:focus-within {
+        z-index: 2;
+    }
+}

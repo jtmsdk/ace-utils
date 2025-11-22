@@ -1,0 +1,35 @@
+.ace-tabs {
+    display: flex;
+    box-sizing: border-box;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 0 6px;
+    border: 0;
+    border-bottom: var(--ace-border);
+    outline: 0;
+    margin: 0;
+    width: 100%;
+    
+    .ace-tab {
+        border-color: transparent;
+        border-bottom-color: var(--ace-border-color);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        background: white;
+        transform: translateY(1px);
+
+        &:hover {
+            box-shadow: none;
+        }
+        &:focus {
+            box-shadow: none;
+        }
+        &:active,
+        &.active {
+            border: var(--ace-border);
+            border-bottom-color: transparent;
+            background: white;
+            color: var(--ace-color);
+        }
+    }
+}

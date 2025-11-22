@@ -1,0 +1,14 @@
+.ace-note {
+    margin: 2.5rem 1.5rem;
+    padding: 1rem;
+    border: var(--ace-border);
+    border-radius: var(--ace-border-radius-s);
+    border-left: 6px solid var(--ace-color-orange-50);
+
+    .ace-note-header {
+        color: var(--ace-color-gray-50);
+        font-size: var(--ace-font-size-s);
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+}

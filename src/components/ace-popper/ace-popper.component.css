@@ -1,0 +1,21 @@
+.ace-popper {
+    display: block;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: var(--ace-z-index-popups);
+    top: 0; right: 0; bottom: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    background: transparent;
+
+    &[backdrop=true] {
+        pointer-events: all;
+    }
+    .ace-popper-body {
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        pointer-events: all;
+    }
+}

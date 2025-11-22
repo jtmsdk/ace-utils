@@ -1,0 +1,37 @@
+.ace-form {
+    display: block;
+    box-sizing: border-box;
+    max-width: 700px;
+    margin: 1rem auto;
+    
+    .ace-form-header {
+        box-sizing: border-box;
+    }
+
+    .ace-input,
+    .ace-select,
+    .ace-textarea {
+        margin-bottom: 1rem;
+    }
+
+    label {
+        display: block;
+        box-sizing: border-box;
+        
+        &[required=true] {
+            &:after {
+                content: "*";
+                margin-left: 0.4em;
+                color: red;
+            }
+        }
+    }
+
+    .ace-form-footer {
+        display: flex;
+        box-sizing: border-box;
+        justify-content: flex-end;
+        margin-top: 2rem;
+        gap: 1rem;
+    }
+}

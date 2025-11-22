@@ -1,0 +1,99 @@
+.ace-button {
+    --ace-button-padding-l: 6px 20px;
+    --ace-button-padding-m: 4px 14px;
+    --ace-button-padding-s: 2px 6px;
+
+    position: relative;
+    display: inline-flex; 
+    box-sizing: border-box;
+    align-items: center;
+    vertical-align: middle;
+    gap: 0.6em;
+    min-height: var(--ace-input-height-m);
+    padding: var(--ace-button-padding-m);
+    font-family: inherit;
+    font-size: var(--ace-font-size);
+    font-weight: var(--ace-font-weight);
+    
+    background: white;
+    border-radius: var(--ace-button-border-radius);
+    border: var(--ace-border);
+    transition: var(--ace-transition);
+    user-select: none;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+        box-shadow: var(--ace-box-shadow-s);
+        border-color: var(--ace-border-color-focus);
+    }
+    &:focus:not(:disabled) {
+        border-color: var(--ace-border-color-focus);
+        box-shadow: var(--ace-box-shadow-focus);
+        outline: 0;
+        z-index: 2;
+    }
+    &:active:not(:disabled), 
+    &.active:not(:disabled) {
+        background: var(--ace-background-active);
+        border-color: var(--ace-background-color-active);
+        color: var(--ace-color-active);
+        transition: initial;
+        z-index: 2;
+        outline: 0;
+    }
+    &:disabled {
+        background: var(--ace-background-color-disabled);
+        color: var(--ace-color-disabled);
+        border-color: var(--ace-border-color);
+        cursor: default;
+        box-shadow: none;
+    }
+
+    &[size=small] {
+        min-height: var(--ace-input-height-s);
+        padding: var(--ace-button-padding-s);
+    }
+    &[size=large] {
+        min-height: var(--ace-input-height-l);
+        padding: var(--ace-button-padding-l);
+        font-size: 1.2rem;
+    }
+    &[primary] {
+        border-color: var(--ace-color-gray-30);
+        background: var(--ace-color-gray-30);
+        color: white;
+    }
+    &[transparent] {
+        background: transparent;
+        border-color: transparent;
+        color: inherit;
+    
+        &:hover, &:focus {
+            background: rgba(0,0,0,0.10);
+            border-color: transparent;
+            box-shadow: none;
+        }
+        &:active, &.active {
+            background: var(--ace-background-active);
+        }
+    }
+    &[round] {
+        border-radius: 50%;
+        border-color: transparent;
+        background: transparent;
+        height: var(--ace-input-height-m);
+        width: var(--ace-input-height-m);
+        justify-content: center;
+        min-height: 0;
+        padding: 4px;
+
+        .ace-icon {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &[outline] {
+        background: transparent;
+        border-width: 1px;
+    }
+}

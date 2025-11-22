@@ -1,0 +1,39 @@
+.ace-blockquote {
+    display: block;
+    box-sizing: border-box;
+    margin: 3rem auto;
+    padding: 0 3rem;
+    font-style: italic;
+
+    .ace-blockquote-body {
+        &:before {
+            content: "\201C"; 
+            float: left;
+            font-family: Arial, Verdana;
+            font-weight: bold;
+            font-size: 2.5rem;
+            line-height: 1rem;
+            color: var(--ace-color-matgreen-70);
+            transform: translate(-1rem, 0px);
+        }
+        p {
+            &:first-of-type { margin-top: 0; }
+            &:last-of-type { margin-bottom: 0; }
+        }
+    }
+    footer {
+        font-size: 0.9rem; 
+        margin: 0.5rem 0 0 0;
+        text-align: center;
+        border: 0;
+        padding: 0;
+        
+        span + span, 
+        span + cite, 
+        cite + span {
+            &:before {
+                content: ", ";
+            }
+        }
+    }
+}

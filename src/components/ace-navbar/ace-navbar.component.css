@@ -1,0 +1,41 @@
+.ace-navbar {
+    position: relative;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    background: white;
+    border-bottom: var(--ace-border);
+    box-shadow: var(--ace-box-shadow-s);
+    z-index: var(--ace-z-index-layout);
+    font-family: var(--ace-font-family-header);
+    
+    &[top] {
+        position: fixed;
+        top: 0; left: 0;    
+        width: 100vw;
+    }
+
+    .ace-navbar-body {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: var(--ace-border-radius-s);
+        border: 0;
+        padding: 0.5rem 0.6rem;
+        transition: all 0.3s ease;
+        color: var(--ace-color);
+        
+        &:hover {
+            background: var(--ace-color-gray-85);
+        }
+        &.router-link-exact-active {
+            background: var(--ace-color-gray-50);
+            color: white;
+        }
+    }
+}

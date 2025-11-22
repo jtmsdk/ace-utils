@@ -1,0 +1,25 @@
+#ace-spinners {
+	position: fixed;
+    z-index: var(--ace-z-index-spinners);
+    pointer-events: none;
+    & > * {
+        pointer-events: all;
+    }
+}
+
+@keyframes ace-spinner-spin {
+	from {transform: rotate(0deg);}
+	to {transform: rotate(360deg);}
+}
+.ace-spinner {	
+	animation: ace-spinner-spin 2s linear infinite;
+	--ace-size: 120px;
+    display: block;
+	box-sizing: border-box;
+    width: var(--ace-size);
+	height: var(--ace-size);
+	margin: auto;
+	border-radius: 50%;
+	border: 2px solid var(--ace-color-gray-90);
+	border-top-color: var(--ace-color-gray-30);
+}

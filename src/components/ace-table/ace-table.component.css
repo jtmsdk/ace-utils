@@ -1,0 +1,26 @@
+.ace-table {
+    box-sizing: border-box;
+    border-collapse: collapse;
+    width: 100%;
+    
+    thead {
+        background: transparent;
+        background: var(--ace-color-gray-95);
+    }
+    th, td {
+        vertical-align: top;
+        text-align: left;
+        border: var(--ace-border);
+        padding: 0.4rem 0.6rem;
+    }
+    th {
+        font-weight: var(--ace-font-weight-bold);
+        color: var(--ace-color-gray-50);
+    }
+
+    &[striped] tr {
+        &:nth-child(even) {
+            background-color: var(--ace-color-gray-98);
+        }
+    } 
+}

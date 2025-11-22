@@ -1,0 +1,29 @@
+.ace-card {
+    display: block;
+    box-sizing: border-box;
+    border: var(--ace-border);
+    border-radius: 8px;
+    box-shadow: var(--ace-box-shadow-s);
+    background: white;
+    overflow: hidden;
+    
+    .ace-card-header {
+        box-sizing: border-box;
+        overflow: hidden;
+        
+        .ace-image {
+            display: block;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+    .ace-card-body {
+        box-sizing: border-box;
+        padding: 0.8rem;
+        & > *:first-child { margin-top: 0; }
+        & > *:last-child { margin-bottom: 0; }
+    }
+    .ace-card-footer {
+        box-sizing: border-box;
+    }
+}

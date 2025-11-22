@@ -1,0 +1,26 @@
+.ace-figure {
+    display: block;
+    box-sizing: border-box;
+    margin: 3rem auto;
+
+    .ace-figure-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--ace-color-gray-30);
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        padding: 0.5rem 0.5rem;
+        color: white;
+    }
+    .ace-figure-body {
+        img, video {
+            margin: 0 auto;
+        }
+    }
+    .ace-figure-footer {
+        font-style: italic;
+        padding: 0.5rem 2rem;
+    }
+}

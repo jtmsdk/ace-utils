@@ -1,0 +1,6 @@
+.ace-video,
+.ace-youtubevideo {
+    box-sizing: border-box;
+    margin: 1.5rem auto;
+    max-width: 100%;
+}

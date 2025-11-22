@@ -1,0 +1,83 @@
+.ace-menu {
+    display: inline-block;
+    box-sizing: border-box;
+    box-shadow: var(--ace-box-shadow-s);
+    border: var(--ace-border);
+    border-radius: 6px;
+    background: white;
+    overflow: hidden;
+    padding: 4px 0;
+    
+    .ace-menu-header {
+        padding: 6px;
+        border-bottom: var(--ace-border);
+    }
+    .ace-menu-body {
+        overflow-y: auto;
+    }
+}
+
+.ace-optiongroup {
+    display: block;
+    box-sizing: border-box;
+
+    .ace-optiongroup-button {
+        .ace-icon {
+            transform-origin: 50% 50% 0;
+        }
+        &.opened .ace-icon {
+            transform: rotate(90deg);
+        }
+    }
+    .ace-optiongroup-body {
+        .ace-option {
+            padding-left: 2rem;
+        }
+    }
+}
+
+.ace-option {
+    all: unset;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    gap: 0.6em;
+    border: 1px solid transparent;
+    padding: 0.5rem 1.5rem 0.5rem 1rem;
+    border-radius: 0;
+    width: 100%;
+    position: relative;
+    user-select: none;
+
+    &:hover {
+        border-color: transparent;
+        background: var(--ace-color-gray-95);
+        color: var(--ace-color);
+    }
+    &:focus {
+        border-color: var(--ace-border-color-focus); 
+        color: var(--ace-color);
+    }
+    &.selected {
+        background: var(--ace-color-blue-95);
+        color: var(--ace-color-blue-30);
+    }
+    &:active {
+        background: var(--ace-background-active);
+        color: white;
+    }
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+}
+
+.ace-option-header {
+    display: block;
+    box-sizing: border-box;
+    padding: 1.5rem 1rem 0.8rem 1rem;
+    color: var(--ace-color-gray-40);
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 600;
+    cursor: default;    
+}

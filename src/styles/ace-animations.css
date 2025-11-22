@@ -1,0 +1,41 @@
+@keyframes ace-animation-fadein {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes ace-animation-slidein-left {
+    from { transform: translateX(-200px); }
+    to { transform: translateX(0); }
+}
+
+@keyframes ace-animation-slidein-top {
+    from { transform: translateY(-50px); }
+    to { transform: translateY(0); }
+}
+
+@keyframes ace-animation-scalein {
+    from { transform: scale(0.4); }
+    to { transform: scale(1); }
+}
+
+@keyframes ace-animation-marker {
+    from { 
+        background: transparent;
+        color: currentColor;
+        margin-right: 2em;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    to { 
+        background: black;
+        color: white;
+        margin-right: 0;
+        padding-left: 1em;
+        padding-right: 1em; 
+    }
+}
+
+.ace-animation-marker {
+    animation: com-animation-marker 0.5s ease;
+    animation-fill-mode: forwards;
+}

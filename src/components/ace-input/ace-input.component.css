@@ -1,0 +1,165 @@
+/* TODO: only apply this for ace components */
+input, textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    display: block;
+    box-sizing: border-box;
+    min-height: var(--ace-input-height-m);
+    font-family: var(--ace-font-family);
+    font-size: var(--ace-font-size);
+    font-weight: var(--ace-font-weight);
+    border: var(--ace-border);
+    border-radius: var(--ace-input-border-radius);
+    transition: all 0.2s ease;
+    padding: var(--ace-input-padding);
+    margin: 0;
+
+    &:focus {
+        border-color: var(--ace-border-color-focus);
+        box-shadow: var(--ace-box-shadow-focus);
+        outline: none;
+        z-index: 2;
+    }
+    &:hover:not(:disabled) {
+        border-color: var(--ace-border-color-focus);
+        z-index: 3;    
+    }
+    &:active:not(:disabled), 
+    &.active:not(:disabled) {
+        border-color: var(--ace-border-color-focus);
+        z-index: 2;
+    }
+    &:disabled {
+        background: var(--ace-background-color-disabled);
+        color: var(--ace-color-disabled);
+        cursor: var(--ace-cursor-disabled);
+    }
+}
+
+.ace-input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.ace-input[type=text],
+.ace-input[type=number],
+.ace-input[type=email],
+.ace-input[type=date],
+.ace-input[type=time],
+.ace-input[type=tel] {
+    input {
+        display: block;
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+}
+
+.ace-input[type=date],
+.ace-input[type=time] {
+    width: 10em;
+}
+
+.ace-input[type=checkbox],
+.ace-input[type=radio] {
+    label {
+        display: inline-flex;
+        align-items: center;
+        height: var(--ace-input-height-m);
+        cursor: pointer;
+        gap: 0.5em;
+    }
+    input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        min-width: auto;
+        min-height: auto;
+        padding: 0;
+        cursor: pointer;
+    
+        &:before {
+            content: "";
+            display: block;
+            text-align: center;
+            box-sizing: border-box;
+            width: 8px;
+            height: 14px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            transform: translateY(-6px) rotateZ(50deg);
+            transition: var(--ace-transition);
+        }
+        &:checked {
+            border-color: var(--ace-border-color-focus);
+            background: var(--ace-border-color-focus);
+            
+            &:before {
+                transform: translateY(-2px) rotateZ(35deg);
+            }
+        }
+    }
+}
+
+.ace-input[type=radio] {
+    input {
+        border-radius: 50%;
+    }
+}
+
+.ace-input[type=color] {
+    display: flex;
+    label {
+        display: inline-flex;
+        align-items: center;
+        height: var(--ace-input-height-m);
+        gap: 0.5em;
+    }
+    input {
+        box-sizing: border-box;
+        width: var(--ace-input-height-m);
+        height: var(--ace-input-height-m);
+        padding: 2px 3px;
+        background: white;
+    }
+}
+
+.ace-input[type=range] {
+    input {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 8px;
+        min-height: 8px;
+        max-height: 8px;
+        padding: 0;
+        border: var(--ace-border);
+        background: var(--ace-color-gray-97);
+        border-radius: 4px;
+        outline: none;
+        cursor: pointer;
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: white; 
+            border: var(--ace-border);
+            border-radius: 50%;
+        }
+        &::-moz-range-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: white; 
+            border: var(--ace-border);
+            border-radius: 50%;
+        }
+    }
+}

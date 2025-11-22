@@ -1,0 +1,15 @@
+.ace-textarea {
+    display: block;
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+
+    textarea {
+        display: block;
+        box-sizing: border-box;
+        max-height: 100%;
+        height: 100%;
+        width: 100%;
+        resize: none;
+    }
+}
