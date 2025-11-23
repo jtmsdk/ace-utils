@@ -19,30 +19,37 @@
     
     /* Default styles */
 
-    color: var(--ace-color-gray-40);
+    color: white;
     margin: 4px 0;
+    a {
+        color: white;
+        text-decoration-color: white;
+        &:hover, 
+        &:focus, 
+        &:active {
+            color: white;
+            text-decoration-color: white;
+        }
+    }
 
     &[type=info] {
-        background: var(--ace-background-color-info);
-        color: var(--ace-color-info);
+        background: var(--ace-color-matblue-60);
     }
     &[type=success] {
-        background: var(--ace-background-color-success);
-        color: var(--ace-color-success);
+        background: var(--ace-color-matgreen-50);
     }
     &[type=warning] {
-        background: var(--ace-background-color-warning);
-        color: var(--ace-color-warning);
+        background: var(--ace-color-matorange-60);
     }
     &[type=critical] {
-        background: var(--ace-background-color-critical);
-        color: var(--ace-color-critical);
+        background: var(--ace-color-matred-60);
+  
     }
 
     /* Text variants */
 
     &[text] {
-        font-weight: 400;
+ 
         background: white;
         border: 0;
 
@@ -62,7 +69,7 @@
 
     /* Size variants */
 
-    &[small] {
+    &[size=small] {
         font-size: var(--ace-font-size-s);
         padding: 2px 6px;
     }

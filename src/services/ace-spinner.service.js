@@ -1,73 +1,57 @@
-import {createApp} from 'vue';
 import {getUniqueID} from './ace-utils.service';
-import {createElement} from './ace-dom.service';
-import {AceModal} from '../components/ace-modal/ace-modal.component';
 import {AceSpinner} from '../components/ace-spinner/ace-spinner.component';
+import service from '../services/ace-modal.service';
 
-const container = createElement(`<div id="ace-spinners"></div>`);
-document.body.appendChild(container);
+const DEFAULT_ID = 'ace-spinner-fs';
+const DEFAULT_SIZE = '120px';
 
-const DEFAULT_OPTIONS = {
-    id: 'ace-spinner-default',
-    appendTo: container,
-    position: 'fixed',
-    background: 'transparent',
-    size: '120px'
-};
+class AceSpinnerService {
+    spinners = [];
 
-const app = createApp({
-    components: {
-        AceModal,
-        AceSpinner
-    },
-    data: () => ({
-        spinners: []
-    }),
-    template: `
-        <ace-modal 
-            v-for="spinner in spinners"
-            :appendTo="spinner.appendTo"
-            :background="spinner.background"
-            :position="spinner.position"
-            place-items="center center"
-            animation="none"
-            padding="0">
-            <ace-spinner
-                :size="spinner.size">
-            </ace-spinner>
-        </ace-modal>
-    `,
-    methods: {
-        getSpinner(id) {
-            return this.spinners.find(s => s.id === id);
-        },
-        open(options) {
-            let id = options ? options.id || getUniqueID() : DEFAULT_OPTIONS.id;
-            if (this.getSpinner(id)) {
-                return this.getSpinner(id);
-            }
-            let self = this;
-            let hook = Object.assign({}, DEFAULT_OPTIONS, options, {
-                id: id, 
-                close: () => self.close(id)
-            });
-            this.spinners.push(hook);
-            return hook;
-        },
-        close(id) {
-            id = id || DEFAULT_OPTIONS.id;
-            let i = this.spinners.findIndex(s => s.id === id);
-            if (i >= 0) {
-                this.spinners.splice(i, 1);
-            }
-        },
-        closeAll() {
-            for (let i = this.spinners.length-1; i >= 0; i--) {
-                this.spinners.splice(i, 1);
-            }
+    getSpinner(id) {
+        return this.spinners?.find(s => s.id === id);
+    }
+
+    open(options) {
+        let id = options ? options.id || getUniqueID() : DEFAULT_ID;
+        let size = options?.size || DEFAULT_SIZE;
+
+        if (this.getSpinner(id)) {
+            return this.getSpinner(id);
+        }
+        let component = {
+            components: {AceSpinner},
+            template: `<ace-spinner size="${size}"></ace-spinner>`
+        };
+        this.spinners.push(service.open({
+            id: id,
+            component: component,
+            appendTo: options?.appendTo,
+            position: (options?.appendTo && !options?.position) ? 'absolute' : options?.position || 'fixed',
+            background: options?.background || 'transparent',
+            placeItems: 'center center',
+            animation: 'none',
+            margin: '0'
+        }));
+        return {
+            id: id, 
+            close: () => this.close(id)
+        };
+    }
+
+    close(id) {
+        id = id || DEFAULT_ID;
+        let i = this.spinners.findIndex(s => s.id === id);
+        if (i >= 0) {
+            this.spinners[i].close();
+            this.spinners.splice(i, 1);
         }
     }
-});
 
-const aceSpinnerService = app.mount(container);
-export default aceSpinnerService;
+    closeAll() {
+        this.spinners?.forEach(s => s.close());
+        this.spinners = [];
+    }
+}
+
+export default new AceSpinnerService();

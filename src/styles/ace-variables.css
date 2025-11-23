@@ -214,10 +214,9 @@
     --ace-color-matred-90: hsl(0, 40%, 90%);
     --ace-color-matred-95: hsl(0, 40%, 95%);
 
-    --ace-font-family-open-sans: 'Open Sans', sans-serif; 
-    --ace-font-family-raleway: 'Raleway', serif;
-    --ace-font-family-dancing-script: 'Dancing Script', cursive;
-
+    --ace-font-family-open-sans: "Open Sans", sans-serif;
+    --ace-font-family-raleway: "Raleway", sans-serif;
+    
     --ace-font-family: var(--ace-font-family-open-sans);
     --ace-font-family-header: var(--ace-font-family-raleway);
     --ace-font-family-code: monospace;
@@ -236,7 +235,7 @@
     --ace-color-placeholder: var(--ace-color-gray-30);
 
     --ace-color-info: var(--ace-color-matblue-50);
-    --ace-color-success: var(--ace-color-matgreen-50);
+    --ace-color-success: var(--ace-color-matgreen-40);
     --ace-color-warning: var(--ace-color-matorange-50);
     --ace-color-critical: var(--ace-color-matred-50);
 
@@ -274,5 +273,4 @@
     --ace-z-index-layout: 1000;
     --ace-z-index-popups: 10000;
     --ace-z-index-alerts: 20000;
-    --ace-z-index-spinners: 30000;
 }

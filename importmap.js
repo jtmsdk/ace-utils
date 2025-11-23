@@ -1,5 +1,5 @@
 /**
- * Converts importmap.json paths to be usable in vite build path aliases.
+ * Thif file converts importmap.json into vite build compatible path aliases.
  */
 import path from 'path';
 import importMap from './importmap.json';

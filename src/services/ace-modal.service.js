@@ -1,14 +1,6 @@
 import {createApp, markRaw} from 'vue';
-import {createElement} from './ace-dom.service';
 import {getUniqueID} from './ace-utils.service';
-import {AceModal} from '../components/ace-modal/ace-modal.component';
-
-// TODO: this must be a component instance inside app,
-// not a separate app instance, otherwise none of the global components
-// or global directives can be used in modals!
-
-const container = createElement(`<div id="ace-modals"></div>`);
-document.body.append(container);
+import {AceModal, getContainer} from '../components/ace-modal/ace-modal.component';
 
 let app = createApp({
     components: {
@@ -22,10 +14,11 @@ let app = createApp({
             v-for="modal in modals"
             :id="modal.id"
             :appendTo="modal.appendTo"
+            :position="modal.position"
             :animation="modal.animation"
             :background="modal.background"
             :place-items="modal.placeItems"
-            :padding="modal.padding"
+            :margin="modal.margin"
             @close="modal.onclose()">
             <component :is="modal.component"></component>
         </ace-modal>
@@ -42,11 +35,12 @@ let app = createApp({
             let modalHook = {id, promise, close};
             let modalParams = {
                 id: id,
-                appendTo: options.appendTo || container,
+                appendTo: options.appendTo || getContainer(),
                 animation: options.animation,
                 background: options.background,
                 placeItems: options.placeItems,
-                padding: options.padding,
+                position: options.position,
+                margin: options.margin,
                 onclose: () => options.onclose && options.onclose(),
                 component: markRaw(options.component)
             };
@@ -67,5 +61,5 @@ let app = createApp({
     }
 });
 
-const comModalService = app.mount('#ace-modals');
-export default comModalService;
+const aceModalService = app.mount('#ace-modals');
+export default aceModalService;

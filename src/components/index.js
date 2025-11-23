@@ -20,7 +20,6 @@ export * from './ace-link/ace-link.component';
 export * from './ace-menu/ace-menu.component';
 export * from './ace-modal/ace-modal.component';
 export * from './ace-msg/ace-msg.component';
-export * from './ace-navbar/ace-navbar.component';
 export * from './ace-note/ace-note.component';
 export * from './ace-parallax/ace-parallax.component';
 export * from './ace-popper/ace-popper.component';

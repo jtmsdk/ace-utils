@@ -1,5 +1,18 @@
 import {AceAutofocus} from '../../directives/ace-autofocus/ace-autofocus.directive';
 import {AceFocustrap} from '../../directives/ace-focustrap/ace-focustrap.directive';
+import {createElement} from '../../services/ace-dom.service';
+
+/**
+ * Returns the container for all modals.
+ */
+export const getContainer = () => {
+    let container = document.getElementById('ace-modals');
+    if (!container) {
+        container = createElement(`<div id="ace-modals"></div>`);
+        document.body.append(container);
+    }
+    return container;
+};
 
 export const AceModal = {
     directives: {
@@ -9,12 +22,12 @@ export const AceModal = {
     emits: ['close'],
     props: {
         id: String,
-        appendTo: {type: HTMLElement, default: document.body},
+        appendTo: {type: HTMLElement, default: getContainer()},
         position: {type: String, default: 'fixed'},
         animation: String,
         placeItems: String,
         background: String,
-        padding: String
+        margin: String
     },
     template: `
         <teleport :to="appendTo">
@@ -23,6 +36,7 @@ export const AceModal = {
                 @click="$emit('close')"
                 :style="styles">
                 <div class="ace-modal-body"
+                    @click.stop
                     v-ace-autofocus
                     v-ace-focustrap>
                     <slot></slot>
@@ -33,35 +47,14 @@ export const AceModal = {
     computed: {
         styles() {
             return {
-                '--position': this.position,
-                '--animation': this.animation,
-                '--background': this.background,
-                '--placeItems': this.placeItems,
-                '--padding': this.padding,
+                '--ace-position': this.position,
+                '--ace-animation': this.animation,
+                '--ace-background': this.background,
+                '--ace-placeItems': this.placeItems,
+                '--ace-margin': this.margin,
                 'width': this.position === 'absolute' ? '100%' : '100vw',
                 'height': this.position === 'absolute' ? '100%' : '100vh',
             };
-        }
-    },
-    data: () => ({
-        bodyStyles: null
-    }),
-    mounted() {
-        if (this.position === 'fixed') {
-            this.bodyStyles = {
-                overflow: document.body.style.overflow,
-                overflowY: document.body.style.overflowY
-            };
-            Object.assign(document.body.style, {
-                overflow: 'hidden',
-                overflowY: 'hidden'
-            });
-        }
-    },
-    beforeUnmount() {
-        if (this.bodyStyles) {
-            Object.assign(document.body.style, this.bodyStyles);
-            this.bodyStyles = null;
         }
     }
 }

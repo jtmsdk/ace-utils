@@ -1,20 +1,18 @@
-#com-modals {
+#ace-modals {
     position: fixed;
     z-index: var(--ace-z-index-popups);
     pointer-events: none;
-    & > * {
-        pointer-events: all;
-    }
 }
 
-.com-modal {
+.ace-modal {
     --ace-position: fixed;
     --ace-placeItems: start center;
-    --ace-background: @background-backdrop;
-    --ace-animation: com-animation-slidein-top 0.4s ease-out;
-    --ace-padding: 10vh 2rem;
+    --ace-background: var(--ace-background-backdrop);
+    --ace-animation: ace-animation-slidein-top 0.4s ease-out;
+    --ace-margin: 10vh 2rem;
 
-    animation: com-animation-fadein 0.3s ease;
+    pointer-events: all;
+    animation: ace-animation-fadein 0.3s ease;
     display: grid;
     box-sizing: border-box;
     grid-template-columns: 100%;
@@ -26,14 +24,13 @@
 
     position: var(--ace-position);
     top: 0; right: 0; bottom: 0; left: 0;
-    z-index: var(--ace-z-index-popups);
     background: var(--ace-background);
 
-    .com-modal-body {
+    .ace-modal-body {
         display: block;
         box-sizing: border-box;
         animation: var(--ace-animation);
-        padding: var(--ace-padding);
+        margin: var(--ace-margin);
         max-width: 100%;
     }
 }

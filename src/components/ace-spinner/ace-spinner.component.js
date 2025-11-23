@@ -10,7 +10,9 @@ export const AceSpinner = {
     computed: {
         style() {
             return {
-                '--size': (typeof this.size === 'string') ? this.size : this.size + 'px'
+                '--size': (typeof this.size === 'string') 
+                    ? this.size 
+                    : this.size + 'px'
             }
         }
     }

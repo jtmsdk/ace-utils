@@ -3,6 +3,7 @@ import {AceError} from 'ace-error.component';
 import aceSpinnerService from 'ace-spinner.service';
 
 export const createSiteRouter = (options) => {
+
     const router = createRouter({
         history: options.history || createWebHashHistory(),
         routes: [...options.routes, { 

@@ -9,7 +9,7 @@ export const AceSwitch = {
     },
     template: `
         <div class="ace-switch"
-            :style="{'--width': size}">
+            :style="{'--ace-width': size}">
             <label>
                 <input type="checkbox" 
                     :name="name"

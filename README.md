@@ -1,6 +1,6 @@
 # ace-utils
 
-Frontend toolkit for web apps using Vue and ES modules.
+Frontend toolkit for Vue apps.
 
 ## Installation
 

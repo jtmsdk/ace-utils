@@ -3,7 +3,7 @@ import checkmarkRoundInverseIcon from '../../assets/icons/checkmark-round-invers
 import warningTriangleInverseIcon from '../../assets/icons/warning-triangle-inverse.svg?inline';
 import xStopInverseIcon from '../../assets/icons/x-stop-inverse.svg?inline';
 
-import { AceIcon } from '../ace-icon/ace-icon.component';
+import {AceIcon} from '../ace-icon/ace-icon.component';
 
 const ICONS = {
     info: infoRoundInverseIcon,

@@ -4,36 +4,37 @@ a, .ace-link {
     font-family: inherit;
     line-height: normal;
     cursor: pointer;
-    
+
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: var(--ace-color-link);
+    color: var(--ace-color-link);
+    transition: var(--ace-transition);
+
     padding: 0;
     border: 0;
-    
-    border-bottom: 1px solid color-mix(in hsl, var(--ace-color-link), white 80%);
     border-radius: 0;
     min-height: initial;
     background: transparent;
-    color: var(--ace-color-link);
-    text-decoration: none;
-    transition: var(--ace-transition);
 
     &:hover, 
     &:focus {
         color: var(--ace-color-link);
-        border-color: var(--ace-color-link);
+        text-decoration-color: color-mix(in hsl, var(--ace-color-link), white 60%);
         box-shadow: none;
         outline: 0;
     }
     &:active,
     &.active {
         color: var(--ace-color-link);
-        border-color: var(--ace-color-link);
+        text-decoration-color: color-mix(in hsl, var(--ace-color-link), white 60%);
         background: transparent;
         transition: initial;
     }
     &.disabled,
     &[disabled] {
         color: var(--ace-color-disabled);
-        border-color: color-mix(in hsl, var(--ace-color-disabled), white 60%);
+        text-decoration-color: color-mix(in hsl, var(--ace-color-disabled), white 60%);
         cursor: default;
         pointer-events: none;
     }
