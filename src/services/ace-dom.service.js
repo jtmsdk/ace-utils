@@ -25,6 +25,10 @@ export const createComp = (component, app, options) => {
     return {vNode, destroy, el};
 };
 
+/**
+ * Creates and returns HTMLElement from given HTML string.
+ * @param {string} html the HTML string.
+ */
 export const createElement = (html) => {
     let template = document.createElement('template');
     template.innerHTML = html.trim();

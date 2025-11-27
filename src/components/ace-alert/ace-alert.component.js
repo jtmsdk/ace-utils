@@ -3,7 +3,7 @@ import successIcon from '../../assets/icons/checkmark-round.svg?inline';
 import warningIcon from '../../assets/icons/warning-round.svg?inline';
 import criticalIcon from '../../assets/icons/x-stop.svg?inline';
 import closeIcon from '../../assets/icons/x.svg?inline';
-import { AceIcon } from '../ace-icon/ace-icon.component';
+import {AceIcon} from 'ace-icon.component';
 
 const ICONS = {
     info: infoIcon,

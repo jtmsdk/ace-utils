@@ -73,12 +73,11 @@ export const unescape = (text) => {
 
 /**
  * Copies given text onto clipboard.
- * @param {string} text
+ * @param {string} text the text to copy.
+ * @returns {Promise} the promise that resolves when copy is done.
  */
 export const copyToClipboard = (text) => {
-    if (navigator.clipboard) {
-        navigator.clipboard.writeText(text);
-    }
+    return navigator.clipboard.writeText(text);    
 };
 
 /**

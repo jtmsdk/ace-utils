@@ -1,9 +1,9 @@
 {
   "name": "ace-utils",
-  "version": "0.1.0",
-  "description": "Frontend toolkit for Vue apps",
-  "author": "Jussi Mänttäri",
+  "version": "0.5.0",
   "license": "ISC",
+  "author": "Jussi Mänttäri",
+  "description": "Frontend toolkit for Vue apps",
   "homepage": "https://github.com/jtmsdk/ace-utils#readme",
   "repository": {
     "type": "git",

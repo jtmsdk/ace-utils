@@ -252,7 +252,7 @@
     --ace-border-radius-s: 4px;
     --ace-border-radius-m: 8px;
 
-    --ace-box-shadow-focus: 0 0 0 0.25rem fade(var(--ace-color-blue-90), 80%);
+    --ace-box-shadow-focus: 0 0 0 0.25rem var(--ace-color-blue-90);
     --ace-box-shadow-s: 0px 4px 16px 0px rgba(0,0,0,0.15);
     --ace-box-shadow-m: 0px 4px 16px 0px rgba(0,0,0,0.3);
     --ace-box-shadow-l: 0px 4px 16px 0px rgba(0,0,0,0.6);

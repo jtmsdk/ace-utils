@@ -1,10 +1,10 @@
+import {escape, trimTemplateString} from '../../services/ace-utils.service';
 import "./prism.js";
 import "./prism.css";
-import {escape, trimTemplateString} from '../../services/ace-utils.service';
 
 export const AceCodeblock = {
     props: {
-        language: {type: String, default: 'javascript'},
+        lang: {type: String, default: 'javascript'},
         header: String,
         code: String
     },
@@ -18,7 +18,7 @@ export const AceCodeblock = {
     `,
     computed: {
         title() {
-            return this.header || this.language;
+            return this.header || this.lang;
         },
         content() {
             return this.code;
@@ -31,10 +31,10 @@ export const AceCodeblock = {
         let codeEl = this.$refs.code;
         let code = trimTemplateString(this.content);
         let html = window.Prism
-            ? Prism.highlight(code, Prism.languages[this.language], this.language)
+            ? Prism.highlight(code, Prism.languages[this.lang], this.lang)
             : escape(code);
         codeEl.innerHTML = html;
-        codeEl.classList.add('language-'+this.language);
-        this.$refs.pre.classList.add('language-'+this.language);
+        codeEl.classList.add('language-'+this.lang);
+        this.$refs.pre.classList.add('language-'+this.lang);
     }
 };

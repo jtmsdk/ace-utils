@@ -1,6 +1,6 @@
 import chevronRightIcon from '../../assets/icons/chevron-right.svg?inline';
-import { slideUp, slideDown } from '../../services/ace-animation.service';
-import { AceIcon } from '../ace-icon/ace-icon.component';
+import {slideUp, slideDown} from '../../services/ace-animation.service';
+import {AceIcon} from 'ace-icon.component';
 
 const ANIMATION_LENGTH = 300;
 

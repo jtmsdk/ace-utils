@@ -80,12 +80,11 @@ export const AceOption = {
         }
     },
     template: `
-        <a 
-            tabindex="0"
+        <button
+            type="button" 
             class="ace-option"
-            :class="{selected: selected}"
-            @keypress.enter="select()"
             @click="select()"
+            :class="{selected: selected}"
             :href="href">
             <ace-icon 
                 v-if="icon"
@@ -93,7 +92,7 @@ export const AceOption = {
                 :size="iconsize">
             </ace-icon>
             <div><slot>{{label}}</slot></div>
-        </a>
+        </button>
     `,
     methods: {
         select() {

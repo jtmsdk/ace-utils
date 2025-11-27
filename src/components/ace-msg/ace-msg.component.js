@@ -1,3 +1,4 @@
+import warnRoundInverse from '../../assets/icons/warning-round-inverse.svg?inline';
 import infoRoundInverseIcon from '../../assets/icons/info-round-inverse.svg?inline';
 import checkmarkRoundInverseIcon from '../../assets/icons/checkmark-round-inverse.svg?inline';
 import warningTriangleInverseIcon from '../../assets/icons/warning-triangle-inverse.svg?inline';
@@ -6,6 +7,7 @@ import xStopInverseIcon from '../../assets/icons/x-stop-inverse.svg?inline';
 import {AceIcon} from '../ace-icon/ace-icon.component';
 
 const ICONS = {
+    default: warnRoundInverse,
     info: infoRoundInverseIcon,
     success: checkmarkRoundInverseIcon,
     warning: warningTriangleInverseIcon,
@@ -17,7 +19,7 @@ export const AceMsg = {
         AceIcon
     },
     props: {
-        type: { type: String, default: 'info' },
+        type: {type: String, default: 'default'},
         icon: String
     },
     template: `
@@ -44,7 +46,7 @@ export const AceMsg = {
             if (this.type) {
                 return ICONS[this.type];
             }
-            return null;
+            return ICONS.default;
         }
     }
 };

@@ -1,4 +1,4 @@
-import {toTextDateString} from '../../services/ace-datetime.service';
+import {toTextDateString} from 'ace-datetime.service';
 
 export const AceBlockquote = {
     props: {

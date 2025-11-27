@@ -2,7 +2,7 @@
     display: inline-block;
     box-sizing: border-box;
     border-radius: 4px;
-    padding: 2px 8px;
+    padding: 1px 8px;
 
     .ace-msg-body {
         position: relative;
@@ -19,38 +19,44 @@
     
     /* Default styles */
 
-    color: white;
+    background: var(--ace-color-gray-90);
+    color: black;
     margin: 4px 0;
+
     a {
-        color: white;
-        text-decoration-color: white;
+        color: currentColor;
+        text-decoration-color: currentColor;
         &:hover, 
         &:focus, 
         &:active {
-            color: white;
-            text-decoration-color: white;
+            color: currentColor;
+            text-decoration-color: currentColor;
         }
     }
 
     &[type=info] {
         background: var(--ace-color-matblue-60);
+        color: white;
     }
     &[type=success] {
         background: var(--ace-color-matgreen-50);
+        color: white;
     }
     &[type=warning] {
         background: var(--ace-color-matorange-60);
+        color: white;
     }
     &[type=critical] {
         background: var(--ace-color-matred-60);
-  
+        color: white;
     }
 
     /* Text variants */
 
     &[text] {
  
-        background: white;
+        font-weight: 400;
+        background: transparent;
         border: 0;
 
         &[type=info] {

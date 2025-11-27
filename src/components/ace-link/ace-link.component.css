@@ -5,11 +5,12 @@ a, .ace-link {
     line-height: normal;
     cursor: pointer;
 
-    text-decoration: underline;
+    text-decoration: none;
     text-underline-offset: 2px;
     text-decoration-color: var(--ace-color-link);
     color: var(--ace-color-link);
     transition: var(--ace-transition);
+    font-weight: 400;
 
     padding: 0;
     border: 0;
@@ -20,21 +21,20 @@ a, .ace-link {
     &:hover, 
     &:focus {
         color: var(--ace-color-link);
-        text-decoration-color: color-mix(in hsl, var(--ace-color-link), white 60%);
+        text-decoration: underline;
         box-shadow: none;
         outline: 0;
     }
     &:active,
     &.active {
         color: var(--ace-color-link);
-        text-decoration-color: color-mix(in hsl, var(--ace-color-link), white 60%);
+        text-decoration: underline;
         background: transparent;
         transition: initial;
     }
     &.disabled,
     &[disabled] {
         color: var(--ace-color-disabled);
-        text-decoration-color: color-mix(in hsl, var(--ace-color-disabled), white 60%);
         cursor: default;
         pointer-events: none;
     }

@@ -3,6 +3,5 @@
 
 @import "./styles/ace-variables";
 @import "./styles/ace-animations";
-@import "./styles/ace-mixins";
-@import "./styles/ace-base";
+@import "./styles/ace-globals";
 @import "./components/";

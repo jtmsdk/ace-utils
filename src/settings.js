@@ -1,12 +1,15 @@
+/**
+ * Runtime settings for Ace-Utils.
+ */
 export class Settings {
-    LOCALE = 'en-us';
+    LOCALE = 'en-uk';
     DECIMAL_SEPARATOR = '.';
     TIME_FORMAT = 'HH:mm';
     DATE_FORMAT = 'yyyy-MM-dd';
     DATE_TIME_FORMAT = 'yyyy-MM-dd HH:mm';
     PATHS = {
-        ICONS: '@ace.icons',
-        SVGS: '@ace.svgs'
+        ICONS: 'assets/icons',
+        SVGS: 'assets/svgs'
     }
     get lang() {
         return this.LOCALE.split('-')[0];

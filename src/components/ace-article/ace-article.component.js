@@ -1,5 +1,5 @@
-import {toTextDateString} from '../../services/ace-datetime.service';
-import {AceImage} from '../ace-image/ace-image.component';
+import {toTextDateString} from 'ace-datetime.service';
+import {AceImage} from 'ace-image.component';
 
 export const AceArticle = {
     components: {AceImage},
