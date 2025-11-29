@@ -1,18 +1,17 @@
-import questionRoundIcon from '../../assets/icons/question-round.svg?inline';
-import infoRoundIcon from '../../assets/icons/info-round.svg?inline';
-import checkmarkRoundIcon from '../../assets/icons/checkmark-round.svg?inline';
-import warningRoundIcon from '../../assets/icons/warning-round.svg?inline';
-import xStopIcon from '../../assets/icons/x-stop.svg?inline';
-
-import {AceButton} from '../ace-button/ace-button.component';
-import {AceIcon} from '../ace-icon/ace-icon.component';
+import {AceButton} from 'ace-button.component';
+import {AceIcon} from 'ace-icon.component';
+import {iconQuestionRound} from 'ace.assetimports';
+import {iconInfoRound} from 'ace.assetimports';
+import {iconCheckmarkRound} from 'ace.assetimports';
+import {iconWarningRound} from 'ace.assetimports';
+import {iconXStop} from 'ace.assetimports';
 
 const ICONS = {
-    confirm: questionRoundIcon,
-    info: infoRoundIcon,
-    success: checkmarkRoundIcon,
-    warning: warningRoundIcon,
-    critical: xStopIcon
+    confirm: iconQuestionRound,
+    info: iconInfoRound,
+    success: iconCheckmarkRound,
+    warning: iconWarningRound,
+    critical: iconXStop
 };
  
 export const AceDialog = {

@@ -1,4 +1,4 @@
-export const ComPlacement = {
+export const AcePlacement = {
     mounted() {
         
     }

@@ -1,5 +1,5 @@
-import {AceImage} from '../ace-image/ace-image.component';
-import {AceLightbox} from '../../directives/ace-lightbox/ace-lightbox.directive';
+import {AceImage} from 'ace-image.component';
+import {AceLightbox} from 'ace-lightbox.directive';
 
 export const AceThumb = {
     components: {

@@ -1,4 +1,4 @@
-import {loadIcon} from '../../services/ace-icon.service';
+import {loadIcon} from 'ace-icon.service';
 
 const FALLBACK = `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">

@@ -1,11 +1,11 @@
-import expandIcon from '../../assets/icons/expand.svg?inline';
-import xIcon from '../../assets/icons/x.svg?inline';
 import {h} from 'vue';
-import {loadImage} from '../../services/ace-image.service';
-import {AceIcon} from '../ace-icon/ace-icon.component';
-import {AceImage} from '../ace-image/ace-image.component';
-import {AceSpinner} from '../ace-spinner/ace-spinner.component';
-import {toggleFullScreen} from '../../services/ace-utils.service';
+import {loadImage} from 'ace-image.service';
+import {AceIcon} from 'ace-icon.component';
+import {AceImage} from 'ace-image.component';
+import {AceSpinner} from 'ace-spinner.component';
+import {toggleFullScreen} from 'ace-utils.service';
+import {iconExpand} from 'ace.assetimports';
+import {iconX} from 'ace.assetimports';
 
 export const AceLightbox = {
     emits: ['close'],
@@ -38,12 +38,12 @@ export const AceLightbox = {
                 <div class="buttons">
                     <div class="button"
                         @click="toggleFullScreen()">
-                        <ace-icon src="${expandIcon}"></ace-icon>
+                        <ace-icon src="${iconExpand}"></ace-icon>
                     </div>
                     <div class="button"
                         v-if="closeable" 
                         @click="handleClose">
-                        <ace-icon src="${xIcon}"></ace-icon>
+                        <ace-icon src="${iconX}"></ace-icon>
                     </div>
                 </div>
             </div>

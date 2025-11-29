@@ -1,6 +1,6 @@
-import {getUniqueID} from './ace-utils.service';
-import {AceSpinner} from '../components/ace-spinner/ace-spinner.component';
-import service from '../services/ace-modal.service';
+import {getUniqueID} from 'ace-utils.service';
+import {AceSpinner} from 'ace-spinner.component';
+import service from 'ace-modal.service';
 
 const DEFAULT_ID = 'ace-spinner-fs';
 const DEFAULT_SIZE = '120px';

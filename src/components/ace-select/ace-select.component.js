@@ -1,11 +1,11 @@
-import chevronDownIcon from '../../assets/icons/chevron-down.svg?inline';
 import {nextTick} from 'vue';
-import {AceAutofocus} from '../../directives/ace-autofocus/ace-autofocus.directive';
-import {AceFocustrap} from '../../directives/ace-focustrap/ace-focustrap.directive';
-import {AceMenu, AceOption} from '../ace-menu/ace-menu.component';
-import {AcePopper} from '../ace-popper/ace-popper.component';
-import {AceButton} from '../ace-button/ace-button.component';
-import {AceIcon} from '../ace-icon/ace-icon.component';
+import {AceAutofocus} from 'ace-autofocus.directive';
+import {AceFocustrap} from 'ace-focustrap.directive';
+import {AceMenu, AceOption} from 'ace-menu.component';
+import {AcePopper} from 'ace-popper.component';
+import {AceButton} from 'ace-button.component';
+import {AceIcon} from 'ace-icon.component';
+import {iconChevronDown} from 'ace.assetimports';
 
 export const AceSelect = {
     emits: [
@@ -60,7 +60,7 @@ export const AceSelect = {
                             <span>{{getSelectedOptionLabel()}}</span>
                         </slot>
                         <ace-icon 
-                            src="${chevronDownIcon}"
+                            src="${iconChevronDown}"
                             size="0.8em">
                         </ace-icon>
                     </ace-button>

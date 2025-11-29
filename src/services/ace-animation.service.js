@@ -1,4 +1,4 @@
-import {timeout} from './ace-utils.service';
+import {timeout} from 'ace-utils.service';
 const DEFAULT = 200;
 
 // TODO: Once stable, use Web animations API

@@ -1,17 +1,16 @@
-import warnRoundInverse from '../../assets/icons/warning-round-inverse.svg?inline';
-import infoRoundInverseIcon from '../../assets/icons/info-round-inverse.svg?inline';
-import checkmarkRoundInverseIcon from '../../assets/icons/checkmark-round-inverse.svg?inline';
-import warningTriangleInverseIcon from '../../assets/icons/warning-triangle-inverse.svg?inline';
-import xStopInverseIcon from '../../assets/icons/x-stop-inverse.svg?inline';
-
-import {AceIcon} from '../ace-icon/ace-icon.component';
+import {AceIcon} from 'ace-icon.component';
+import {iconWarningRoundInverse} from 'ace.assetimports';
+import {iconInfoRoundInverse} from 'ace.assetimports';
+import {iconCheckmarkRoundInverse} from 'ace.assetimports';
+import {iconWarningTriangleInverse} from 'ace.assetimports';
+import {iconXStopInverse} from 'ace.assetimports';
 
 const ICONS = {
-    default: warnRoundInverse,
-    info: infoRoundInverseIcon,
-    success: checkmarkRoundInverseIcon,
-    warning: warningTriangleInverseIcon,
-    critical: xStopInverseIcon
+    default: iconWarningRoundInverse,
+    info: iconInfoRoundInverse,
+    success: iconCheckmarkRoundInverse,
+    warning: iconWarningTriangleInverse,
+    critical: iconXStopInverse
 };
 
 export const AceMsg = {

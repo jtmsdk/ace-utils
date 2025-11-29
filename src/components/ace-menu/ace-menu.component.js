@@ -1,5 +1,5 @@
-import chevronRightIcon from '../../assets/icons/chevron-right.svg';
-import { AceIcon } from '../ace-icon/ace-icon.component';
+import {AceIcon} from 'ace-icon.component';
+import {iconChevronRight} from 'ace.assetimports';
 
 export const AceMenu = {
     emits: [
@@ -122,7 +122,7 @@ export const AceOptiongroup = {
                     class="ace-optiongroup-button"
                     :class="{opened: isOpen}"
                     @click="isOpen=!isOpen"
-                    icon="${chevronRightIcon}"
+                    icon="${iconChevronRight}"
                     iconsize="0.8em">
                     <slot name="header">
                         {{label}}

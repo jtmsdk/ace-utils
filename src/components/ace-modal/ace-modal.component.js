@@ -1,6 +1,6 @@
-import {AceAutofocus} from '../../directives/ace-autofocus/ace-autofocus.directive';
-import {AceFocustrap} from '../../directives/ace-focustrap/ace-focustrap.directive';
-import {createElement} from '../../services/ace-dom.service';
+import {AceAutofocus} from 'ace-autofocus.directive';
+import {AceFocustrap} from 'ace-focustrap.directive';
+import {createElement} from 'ace-dom.service';
 
 /**
  * Returns the container for all modals.

@@ -1,4 +1,4 @@
-import {AceButton} from '../ace-button/ace-button.component';
+import {AceButton} from 'ace-button.component';
 
 export const AceTabs = {
     emits: ['update:modelValue'],

@@ -1,15 +1,15 @@
-import infoIcon from '../../assets/icons/info-round.svg?inline';
-import successIcon from '../../assets/icons/checkmark-round.svg?inline';
-import warningIcon from '../../assets/icons/warning-round.svg?inline';
-import criticalIcon from '../../assets/icons/x-stop.svg?inline';
-import closeIcon from '../../assets/icons/x.svg?inline';
 import {AceIcon} from 'ace-icon.component';
+import {iconInfoRound} from 'ace.assetimports';
+import {iconCheckmarkRound} from 'ace.assetimports';
+import {iconWarningRound} from 'ace.assetimports';
+import {iconXStop} from 'ace.assetimports';
+import {iconX} from 'ace.assetimports';
 
 const ICONS = {
-    info: infoIcon,
-    success: successIcon,
-    warning: warningIcon,
-    critical: criticalIcon
+    info: iconInfoRound,
+    success: iconCheckmarkRound,
+    warning: iconWarningRound,
+    critical: iconXStop
 };
 
 export const AceAlert = {
@@ -30,7 +30,7 @@ export const AceAlert = {
     template: `
         <div class="ace-alert" :type="type">
             <ace-icon v-if="closeable"
-                src="${closeIcon}" size="10"    
+                src="${iconX}" size="10"    
                 class="ace-alert-close"
                 @click="this.$emit('close', this)">
             </ace-icon>

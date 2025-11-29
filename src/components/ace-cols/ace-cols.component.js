@@ -1,4 +1,4 @@
-import {debounce} from '../../services/ace-utils.service';
+import {debounce} from 'ace-utils.service';
 
 export const AceCols = {
     props: {

@@ -1,6 +1,6 @@
-import chevronRightIcon from '../../assets/icons/chevron-right.svg?inline';
-import {slideUp, slideDown} from '../../services/ace-animation.service';
+import {slideUp, slideDown} from 'ace-animation.service';
 import {AceIcon} from 'ace-icon.component';
+import {iconChevronRight} from 'ace.assetimports';
 
 const ANIMATION_LENGTH = 300;
 
@@ -53,7 +53,7 @@ export const AceAccordionItem = {
         <div class="ace-accordion-item" :open="isOpen">
             <div class="ace-accordion-item-header"
                 @click="accordion.toggle(this)">
-                <ace-icon chevron src="${chevronRightIcon}"></ace-icon>
+                <ace-icon chevron src="${iconChevronRight}"></ace-icon>
                 <slot name="header">{{header}}</slot>
             </div>
             <div class="ace-accordion-item-body" ref="body">

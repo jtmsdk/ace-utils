@@ -1,5 +1,5 @@
 import {reactive, shallowRef} from 'vue';
-import {setTitle, setMeta} from 'com-dom.service';
+import {setTitle, setMeta} from 'ace-dom.service';
 
 export const getBase = () => {
     let href = window.location.href;

@@ -1,4 +1,4 @@
-import {AceIcon} from '../ace-icon/ace-icon.component';
+import {AceIcon} from 'ace-icon.component';
 
 export const AceButton = {
     components: { 

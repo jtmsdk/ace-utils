@@ -1,4 +1,4 @@
-import { createPopper } from './popper.min.js';
+import {createPopper} from './popper.min.js';
 
 export const AcePopper = {
     emits: ['close'],

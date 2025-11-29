@@ -1,5 +1,5 @@
-import {AceLightbox} from '../components/ace-lightbox/ace-lightbox.component';
-import aceModalService from './ace-modal.service';
+import {AceLightbox} from 'ace-lightbox.component';
+import aceModalService from 'ace-modal.service';
 
 const getBoxID = (item) => (typeof item === 'string') ? item : item.id;
 const DEFAULT_BOX_ID = 'default';

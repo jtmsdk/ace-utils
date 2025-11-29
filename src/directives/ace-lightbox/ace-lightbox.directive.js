@@ -1,4 +1,4 @@
-import {aceLightboxService as service} from '../../services/ace-lightbox.service';
+import {aceLightboxService as service} from 'ace-lightbox.service';
 
 export const AceLightbox = {
     mounted(el, binding, vnode) {

@@ -1,4 +1,4 @@
-import {escape, trimTemplateString} from '../../services/ace-utils.service';
+import {escape, trimTemplateString} from 'ace-utils.service';
 import "./prism.js";
 import "./prism.css";
 

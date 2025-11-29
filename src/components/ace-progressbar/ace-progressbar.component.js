@@ -1,4 +1,4 @@
-import checkMarkIcon from '../../assets/icons/checkmark-round-inverse.svg?inline';
+import {iconCheckmarkRoundInverse} from 'ace.assetimports';
 
 export const AceProgressbar = {
     props: {
@@ -14,7 +14,7 @@ export const AceProgressbar = {
                     <slot>
                         <ace-icon 
                             v-if="value === max"
-                            src="${checkMarkIcon}"
+                            src="${iconCheckmarkRoundInverse}"
                             color="white">
                         </ace-icon>
                         {{label}}

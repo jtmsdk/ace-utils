@@ -1,4 +1,4 @@
-import {SETTINGS} from '../settings';
+import {SETTINGS} from 'ace.settings';
 
 /**
  * Converts a date to ISO format "YYYY-MM-DD".

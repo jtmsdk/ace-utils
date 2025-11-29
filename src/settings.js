@@ -1,22 +1,17 @@
 /**
- * Runtime settings for Ace-Utils.
+ * This file contains runtime settings for Ace Utils.
+ * These settings have no effect during app build time.
  */
-export class Settings {
-    LOCALE = 'en-uk';
-    DECIMAL_SEPARATOR = '.';
-    TIME_FORMAT = 'HH:mm';
-    DATE_FORMAT = 'yyyy-MM-dd';
-    DATE_TIME_FORMAT = 'yyyy-MM-dd HH:mm';
-    PATHS = {
-        ICONS: 'assets/icons',
-        SVGS: 'assets/svgs'
-    }
-    get lang() {
-        return this.LOCALE.split('-')[0];
-    }
-    get country() {
-        return this.LOCALE.split('-')[1];
-    }
-}
 
-export const SETTINGS = new Settings();
+export const PATHS = {
+    ICONS: '/ace-utils/src/assets/icons',
+    SVGS: '/ace-utils/src/assets/svgs'
+};
+
+export const SETTINGS = {
+    LOCALE: 'en-uk',
+    DATE_FORMAT: 'yyyy-MM-dd',
+    DATE_TIME_FORMAT: 'yyyy-MM-dd HH:mm',
+    TIME_FORMAT: 'HH:mm',
+    DECIMAL_SEPARATOR: '.'
+};

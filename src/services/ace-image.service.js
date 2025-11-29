@@ -21,6 +21,11 @@ export const loadImage = (filePath) => {
     if (!filePath) {
         return Promise.resolve(null);
     }
+    // Resolve if starts with importpath variable
+    filePath = filePath.startsWith('@')
+        ? import.meta.resolve(filePath)
+        : filePath;
+
     if (CACHE.has(filePath)) {
         return CACHE.get(filePath);
     }

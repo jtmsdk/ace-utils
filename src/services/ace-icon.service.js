@@ -1,4 +1,4 @@
-import {http} from './ace-http.service';
+import {http} from 'ace-http.service';
 
 // Cache for successfully loaded icons
 // String to promise
@@ -20,10 +20,15 @@ export const loadIcons = (srcs, doCache = true) => {
  * @param doCache if true, caches the loaded icon
  * @returns 
  */
-export const loadIcon = (src, doCache = true) => {
+export const loadIcon = async (src, doCache = true) => {
     if (!src) {
         return Promise.reject(null);
     }
+    // Resolve if starts with importpath variable
+    src = src.startsWith('@')
+        ? import.meta.resolve(src)
+        : src;
+
     if (doCache && CACHE.has(src)) {
         return CACHE.get(src);
     }

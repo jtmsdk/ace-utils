@@ -1,10 +1,8 @@
-import searchIcon from '../../assets/icons/search.svg?inline';
-import xRoundIcon from '../../assets/icons/x-round.svg?inline';
-
-import {debounce} from '../../services/ace-utils.service';
-import {AceInput} from '../ace-input/ace-input.component';
-import {AceSpinner} from '../ace-spinner/ace-spinner.component';
-import {AceIcon} from '../ace-icon/ace-icon.component';
+import {debounce} from 'ace-utils.service';
+import {AceInput} from 'ace-input.component';
+import {AceSpinner} from 'ace-spinner.component';
+import {AceIcon} from 'ace-icon.component';
+import {iconXRound, iconSearch} from 'ace.assetimports';
 
 export const AceSearch = {
     components: {
@@ -46,12 +44,12 @@ export const AceSearch = {
             </ace-input>
             <ace-icon 
                 v-show="!viewValue" 
-                src="${searchIcon}" 
+                src="${iconSearch}" 
                 class="search-icon">
             </ace-icon>
             <ace-icon 
                 v-show="viewValue" 
-                src="${xRoundIcon}"
+                src="${iconXRound}"
                 class="clear-icon" 
                 @click="onclear">
             </ace-icon>

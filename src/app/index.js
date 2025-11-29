@@ -1,3 +1,3 @@
-export * from './ace-app';
-export * from './ace-app.router';
-export * from './ace-app.state';
+export * from './ace-app.js';
+export * from './ace-app.router.js';
+export * from './ace-app.state.js';

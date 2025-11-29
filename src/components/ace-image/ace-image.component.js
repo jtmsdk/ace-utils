@@ -1,6 +1,6 @@
-import imageError from '../../assets/svgs/image-placeholder-error.svg?inline';
-import imagePlacer from '../../assets/svgs/image-placeholder.svg?inline';
-import {observe} from '../../services/ace-dom.service';
+import {observe} from 'ace-dom.service';
+import {imagePlaceholder as imagePlacer} from 'ace.assetimports';
+import {imagePlaceholderError as imageError} from 'ace.assetimports';
 
 export const AceImage = {
     emits: ['load', 'error'],

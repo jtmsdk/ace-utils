@@ -1,6 +1,6 @@
 import {createApp, markRaw} from 'vue';
-import {createElement} from './ace-dom.service';
-import {AceAlert} from '../components/ace-alert/ace-alert.component';
+import {createElement} from 'ace-dom.service';
+import {AceAlert} from 'ace-alert.component';
 
 const container = createElement(`<div id="ace-alerts"></div>`);
 document.body.append(container);

@@ -1,6 +1,6 @@
 import {createApp, markRaw} from 'vue';
-import {getUniqueID} from './ace-utils.service';
-import {AceModal, getContainer} from '../components/ace-modal/ace-modal.component';
+import {getUniqueID} from 'ace-utils.service';
+import {AceModal, getContainer} from 'ace-modal.component';
 
 let app = createApp({
     components: {

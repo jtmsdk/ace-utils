@@ -1,4 +1,4 @@
-import {AceImage} from '../ace-image/ace-image.component';
+import {AceImage} from 'ace-image.component';
 
 export const AceCard = {
     components: {AceImage},
