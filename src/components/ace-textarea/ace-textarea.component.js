@@ -20,7 +20,8 @@ export const AceTextarea = {
                 :required="required">
                 {{label}}
             </label>
-            <textarea 
+            <textarea
+                ace-textarea
                 ref="textarea"
                 :name="name"
                 :value="modelValue"

@@ -21,7 +21,7 @@
             &:last-of-type { margin-bottom: 0; }
         }
     }
-    footer {
+    .ace-blockquote-footer {
         font-size: 0.9rem; 
         margin: 0.5rem 0 0 0;
         text-align: center;

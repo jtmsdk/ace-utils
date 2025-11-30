@@ -7,6 +7,7 @@
 }
 
 .ace-accordion-item {
+    all: unset;
     display: block;
     box-sizing: border-box;
     border: var(--ace-border);
@@ -31,11 +32,14 @@
 }
 
 .ace-accordion-item-header {
+    all: unset;
     display: flex;
+    box-sizing: border-box;
     align-items: center;
     padding: 0.8rem 1rem;            
     user-select: none;
     cursor: pointer;
+    width: 100%;
 
     [chevron] {
         flex-shrink: 0;
@@ -44,6 +48,11 @@
     }
     &:hover {
         background: var(--ace-color-gray-98);
+    }
+    &:disabled {
+        cursor: default;
+        background: var(--ace-background-color-disabled);
+        color: var(--ace-color-disabled);
     }
 }
 

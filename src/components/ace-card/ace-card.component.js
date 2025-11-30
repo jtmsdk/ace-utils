@@ -3,17 +3,17 @@ import {AceImage} from 'ace-image.component';
 export const AceCard = {
     components: {AceImage},
     props: {
-        imgsrc: String,
+        image: String,
         action: Function,
         to: [String, Object]
     },
     template: `
         <div class="ace-card">
             <div class="ace-card-header" 
-                v-if="imgsrc || $slots.header">
+                v-if="image || $slots.header">
                 <slot name="header">
                     <ace-image
-                        :src="imgsrc">
+                        :src="image">
                     </ace-image>
                 </slot>
             </div>

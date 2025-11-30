@@ -1,20 +1,21 @@
-/* TODO: only apply this for ace components */
-input, textarea {
+input[ace-input],
+textarea[ace-textarea] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 
     display: block;
     box-sizing: border-box;
-    min-height: var(--ace-input-height-m);
+    height: var(--ace-input-height-m);
+    padding: var(--ace-input-padding);
+    border: var(--ace-border);
+    border-radius: var(--ace-input-border-radius);
+    margin: 0;
+    
     font-family: var(--ace-font-family);
     font-size: var(--ace-font-size);
     font-weight: var(--ace-font-weight);
-    border: var(--ace-border);
-    border-radius: var(--ace-input-border-radius);
     transition: all 0.2s ease;
-    padding: var(--ace-input-padding);
-    margin: 0;
 
     &:focus {
         border-color: var(--ace-border-color-focus);
@@ -117,15 +118,31 @@ input, textarea {
     label {
         display: inline-flex;
         align-items: center;
-        height: var(--ace-input-height-m);
         gap: 0.5em;
+        cursor: pointer;
+        height: 100%;
     }
-    input {
-        box-sizing: border-box;
-        width: var(--ace-input-height-m);
-        height: var(--ace-input-height-m);
-        padding: 2px 3px;
-        background: white;
+    .color-input-cntr {
+        position: relative;
+        input {
+            display: block;
+            box-sizing: border-box;
+            width: var(--ace-input-height-m);
+            height: var(--ace-input-height-m);
+            cursor: pointer;
+            padding: 6px;
+            background: white;
+        }
+        .input-overlay {
+            display: block;
+            position: absolute;
+            box-sizing: border-box;
+            border: 1px solid var(--ace-border-color);
+            top: 6px; left: 6px;
+            width: calc(var(--ace-input-height-m) - 12px);
+            height: calc(var(--ace-input-height-m) - 12px);
+            pointer-events: none;
+        }
     }
 }
 

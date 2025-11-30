@@ -14,9 +14,11 @@ export const AceBlockquote = {
             <div class="ace-blockquote-body">
                 <slot>{{quote}}</slot>
             </div>
-            <footer v-if="isFooter">
-                ― 
+            <footer
+                v-if="isFooter"
+                class="ace-blockquote-footer">
                 <slot name="caption">
+                    ―
                     <span class="author" v-if="author">{{author}}</span>
                     <cite class="source" v-if="source">
                         <span v-if="!href">{{source}}</span>

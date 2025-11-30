@@ -5,11 +5,11 @@ import {iconChevronRight} from 'ace.assetimports';
 const ANIMATION_LENGTH = 300;
 
 export const AceAccordion = {
+    provide() {
+        return {accordion: this};
+    },
     props: {
         multiple: Boolean
-    },
-    provide() {
-        return { accordion: this };
     },
     data: () => ({
         items: []
@@ -20,15 +20,8 @@ export const AceAccordion = {
         </div>
     `,
     methods: {
-        toggle(item) {
-            if (this.multiple) {
-                item.isOpen ? item.close() : item.open();
-            } else if (item.isOpen) {
-                this.closeAll();
-            } else {
-                this.closeAll();
-                item.open();
-            }
+        openAll() {
+            this.items.forEach(item => item.open());
         },
         closeAll() {
             this.items.forEach(item => item.close());
@@ -36,12 +29,38 @@ export const AceAccordion = {
     }
 };
 
+export const AceAccordionItemHeader = {
+    inject: ['accordionItem'],
+    components: {
+        AceIcon
+    },
+    template: `
+        <button 
+            type="button" 
+            class="ace-accordion-item-header"
+            @click="handleOnClick">
+            <ace-icon chevron src="${iconChevronRight}"></ace-icon>
+            <slot></slot>
+        </button>
+    `,
+    methods: {
+        handleOnClick() {
+            this.accordionItem.toggle();
+        }
+    }
+};
+
 export const AceAccordionItem = {
     inject: ['accordion'],
-    components: { AceIcon },
+    components: {
+        AceAccordionItemHeader
+    },
+    provide() {
+        return {accordionItem: this};
+    },
     props: {
         header: String,
-        body: String,
+        disabled: Boolean,
         expanded: Boolean
     },
     data: () => ({
@@ -50,16 +69,19 @@ export const AceAccordionItem = {
         next: null
     }),
     template: `
-        <div class="ace-accordion-item" :open="isOpen">
-            <div class="ace-accordion-item-header"
-                @click="accordion.toggle(this)">
-                <ace-icon chevron src="${iconChevronRight}"></ace-icon>
-                <slot name="header">{{header}}</slot>
-            </div>
+        <fieldset 
+            class="ace-accordion-item"
+            :disabled="disabled"
+            :open="isOpen">
+            <slot>
+                <ace-accordion-item-header @click="toggle()">
+                    {{header}}
+                </ace-accordion-item-header>
+            </slot>
             <div class="ace-accordion-item-body" ref="body">
-                <slot name="body">{{body}}</slot>
+                <slot name="body"></slot>
             </div>
-        </div>
+        </fieldset>
     `,
     mounted() {
         this.accordion.items.push(this);
@@ -72,8 +94,14 @@ export const AceAccordionItem = {
         this.accordion.items.splice(i, 1);
     },
     methods: {
+        toggle() {
+            this.isOpen ? this.close() : this.open();
+        },
         open() {
             if (this.isOpen) return;
+            if (!this.accordion.multiple) {
+                this.accordion.closeAll();
+            }
             this.isOpen = true;
             this.next = 'open';
             this.execute();

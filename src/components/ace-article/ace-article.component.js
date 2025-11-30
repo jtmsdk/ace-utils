@@ -4,48 +4,48 @@ import {AceImage} from 'ace-image.component';
 export const AceArticle = {
     components: {AceImage},
     props: {
-        title: String,
-        subtitle: String,
-        date: [String, Date],
-        image: String
+        meta: Object
     },
     template: `
         <article 
             class="ace-article">
             <header 
-                class="ace-article-header"    
-                v-if="title || $slots.header">
+                class="ace-article-header">
                 <slot name="header">
-                    <h1 v-if="title" 
-                        class="ace-article-title">
-                        {{title}}
-                    </h1>
-                    <h2 v-if="subtitle" 
-                        class="ace-article-subtitle">
-                        {{subtitle}}
-                    </h2>
-                    <div v-if="date" 
-                        class="ace-article-date">
-                        {{textDate}}
-                    </div>
-                    <ace-image v-if="image" 
-                        class="ace-article-image"
-                        effect="fadeincolors"
-                        :src="image">
-                    </ace-image>
+                    <template v-if="meta">
+                        <h1 v-if="meta.title" 
+                            class="ace-article-title">
+                            {{meta.title}}
+                        </h1>
+                        <h2 v-if="meta.subtitle" 
+                            class="ace-article-subtitle">
+                            {{meta.subtitle}}
+                        </h2>
+                        <time v-if="meta.date"  
+                            class="ace-article-date"
+                            :datetime="dateToISO(meta.date)">
+                            {{dateToText(meta.date)}}
+                        </time>
+                        <ace-image v-if="meta.image" 
+                            class="ace-article-image"
+                            effect="fadeincolors"
+                            :src="meta.image">
+                        </ace-image>
+                    </template>
                 </slot>
             </header>
-            <div class="ace-article-body">
+            <main class="ace-article-body">
                 <slot name="body"></slot>
                 <slot></slot>
-            </div>
+            </main>
         </article>
     `,
-    computed: {
-        textDate() {
-            return (typeof this.date === 'string')
-                ? this.date
-                : toTextDateString(this.date);
+    methods: {
+        dateToISO(date) {
+            return (typeof date === 'string') ? date : date.toISOString().split('T')[0];
+        },
+        dateToText(date) {
+            return (typeof date === 'string') ? date : toTextDateString(date);
         }
     }
 };

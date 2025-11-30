@@ -13,18 +13,18 @@ const ICONS = {
 };
 
 export const AceAlert = {
-    components: { AceIcon },
     emits: ['close'],
+    components: { AceIcon },
     props: {
         type: { type: String, default: 'default' },
         closeable: { type: Boolean, default: true },
+        header: String,
+        body: String,
         icon: String
     },
     computed: {
         alertIcon() {
-            return (this.icon !== undefined)
-                ? this.icon
-                : ICONS[this.type];
+            return (this.icon !== undefined) ? this.icon : ICONS[this.type];
         }
     },
     template: `
@@ -40,11 +40,11 @@ export const AceAlert = {
                 :src="alertIcon">
             </ace-icon>
             <div>
-                <div class="ace-alert-header" v-if="$slots.header">   
-                    <slot name="header"></slot>
+                <div class="ace-alert-header" v-if="header || $slots.header">
+                    <slot name="header">{{header}}</slot>
                 </div>
-                <div class="ace-alert-body" v-if="$slots.body || $slots.default">
-                    <slot name="body"></slot>
+                <div class="ace-alert-body" v-if="body || $slots.body || $slots.default">
+                    <slot name="body">{{body}}</slot>
                     <slot></slot>
                 </div>
             </div>
