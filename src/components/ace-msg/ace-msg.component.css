@@ -19,8 +19,9 @@
     
     /* Default styles */
 
-    background: var(--ace-color-gray-90);
-    color: black;
+    border: 1px solid var(--ace-color-gray-70);
+    background: var(--ace-color-gray-95);
+    color: var(--ace-color-gray-20);
     margin: 4px 0;
 
     a {
@@ -35,42 +36,24 @@
     }
 
     &[type=info] {
-        background: var(--ace-color-matblue-60);
-        color: white;
+        border-color: var(--ace-color-matblue-70);
+        background: var(--ace-color-matblue-95);
+        color: var(--ace-color-matblue-40);
     }
     &[type=success] {
-        background: var(--ace-color-matgreen-50);
-        color: white;
+        border-color: var(--ace-color-matgreen-70);
+        background: var(--ace-color-matgreen-95);
+        color: var(--ace-color-matgreen-30);
     }
     &[type=warning] {
-        background: var(--ace-color-matorange-60);
-        color: white;
+        border-color: var(--ace-color-matorange-70);
+        background: var(--ace-color-matorange-95);
+        color: var(--ace-color-matorange-40);
     }
     &[type=critical] {
-        background: var(--ace-color-matred-60);
-        color: white;
-    }
-
-    /* Text variants */
-
-    &[text] {
- 
-        font-weight: 400;
-        background: transparent;
-        border: 0;
-
-        &[type=info] {
-            color: var(--ace-color-info);
-        }
-        &[type=success] {
-            color: var(--ace-color-success);
-        }
-        &[type=warning] {
-            color: var(--ace-color-warning);
-        }
-        &[type=critical] {
-            color: var(--ace-color-critical);
-        }
+        border-color: var(--ace-color-matred-80);
+        background: var(--ace-color-matred-95);
+        color: var(--ace-color-matred-40);
     }
 
     /* Size variants */

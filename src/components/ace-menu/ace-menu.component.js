@@ -145,9 +145,9 @@ export const AceOptiongroup = {
     }
 };
 
-export const AceOptionHeader = {
+export const AceOptionH = {
     template: `
-        <div class="ace-option-header">
+        <div class="ace-option-h">
             <slot></slot>
         </div>
     `

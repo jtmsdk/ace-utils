@@ -14,10 +14,10 @@
     height: auto;
     margin: 0 auto;
 
-    &.loaded[enter-effect=fadein] {
+    &.visible[enter-effect=fadein] {
         animation: ace-animation-fadein 1s ease;
     }
-    &.loaded[enter-effect=fadeincolor] {
+    &.visible[enter-effect=fadeincolor] {
         animation: ace-image-fadeincolor 1.5s ease;
     }
 }

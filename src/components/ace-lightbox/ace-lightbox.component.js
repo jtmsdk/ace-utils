@@ -15,7 +15,7 @@ export const AceLightbox = {
         AceSpinner 
     },
     props: {
-        keyboard: Boolean,
+        keyboard: {type: Boolean, default: false},
         closeable: {type: Boolean, default: true},
         items: {type: Array, default: []},
         item: [String, Number, Object]

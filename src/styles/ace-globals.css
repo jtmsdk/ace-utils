@@ -29,7 +29,7 @@ h2 {
 
 h3 {
 	font-size: min(2rem, 5vw);
-    font-weight: 300;
+    font-weight: 200;
 }
 
 h4 {
@@ -61,14 +61,14 @@ ul, ol {
 }
 
 em {
-    font-style: italic;
     font-weight: 500;
-    color: var(--ace-color-gray-60);
+    font-style: italic;
+    color: var(--ace-color-gray-30);
 }
 
 code {
     font-family: var(--ace-font-family-code);
-    background-color: var(--ace-color-gray-90);
+    background-color: var(--ace-color-gray-95);
     color: var(--ace-color-gray-30);
     border-radius: 2px;
     padding: 0 5px;

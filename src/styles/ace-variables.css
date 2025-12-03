@@ -244,7 +244,7 @@
     --ace-background-active: linear-gradient(var(--ace-color-blue-60), var(--ace-color-blue-65));
     --ace-background-color-hover: var(--ace-color-gray-98);
     --ace-background-color-disabled: var(--ace-color-gray-97);
-    --ace-background-backdrop: rgba(0,0,0,0.5);
+    --ace-background-backdrop: rgba(0, 0, 0, 0.2);
 
     --ace-border: 1px solid var(--ace-border-color);
     --ace-border-color: var(--ace-color-gray-85);

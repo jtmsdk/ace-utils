@@ -19,9 +19,6 @@ export const AceCodeblock = {
     computed: {
         title() {
             return this.header || this.lang;
-        },
-        content() {
-            return this.code;
         }
     },
     mounted() {
@@ -29,7 +26,7 @@ export const AceCodeblock = {
             console.error('Prism.js (https://prismjs.com/) is not available: ace-codeblock is unable to add syntax highlighting.');
         }
         let codeEl = this.$refs.code;
-        let code = trimTemplateString(this.content);
+        let code = trimTemplateString(this.code);
         let html = window.Prism
             ? Prism.highlight(code, Prism.languages[this.lang], this.lang)
             : escape(code);

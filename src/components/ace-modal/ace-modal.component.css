@@ -1,36 +1,28 @@
-#ace-modals {
-    position: fixed;
-    z-index: var(--ace-z-index-popups);
-    pointer-events: none;
-}
+dialog.ace-modal {
+    --ace-modal-placeItems: start center;
+    --ace-modal-background: var(--ace-background-backdrop);
+    --ace-modal-animation: ace-animation-slidein-top 0.4s ease-out;
+    --ace-modal-margin: 10vh 1rem;
 
-.ace-modal {
-    --ace-position: fixed;
-    --ace-placeItems: start center;
-    --ace-background: var(--ace-background-backdrop);
-    --ace-animation: ace-animation-slidein-top 0.4s ease-out;
-    --ace-margin: 10vh 2rem;
-
-    pointer-events: all;
     animation: ace-animation-fadein 0.3s ease;
-    display: grid;
-    box-sizing: border-box;
-    grid-template-columns: 100%;
-    grid-template-rows: 100%;
-    place-items: var(--ace-placeItems);
     width: 100vw;
     height: 100vh;
-    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    place-items: var(--ace-modal-placeItems);
+    background: transparent;
+    border: 0;
 
-    position: var(--ace-position);
-    top: 0; right: 0; bottom: 0; left: 0;
-    background: var(--ace-background);
-
+    &::backdrop {
+        background: var(--ace-modal-background);
+    }
+    
     .ace-modal-body {
         display: block;
         box-sizing: border-box;
-        animation: var(--ace-animation);
-        margin: var(--ace-margin);
+        animation: var(--ace-modal-animation);  
+        padding: var(--ace-modal-margin);
         max-width: 100%;
     }
 }

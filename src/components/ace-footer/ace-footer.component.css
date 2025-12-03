@@ -2,10 +2,9 @@
     display: block;
     box-sizing: border-box;
     border-top: var(--ace-border);
+    color: var(--ace-color-gray-40);
     font-size: var(--ace-font-size-s);
     text-align: center;
-    color: var(--ace-color-gray-40);
     padding: 3rem;
-    margin-top: 4rem;
     width: 100%;
 }

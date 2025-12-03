@@ -23,36 +23,36 @@ class AceLightboxService {
     }
 
     open(box, item) {
-        let id = getBoxID(box);
-        box = BOXES.get(id);
-        box.item = item;
+        // let id = getBoxID(box);
+        // box = BOXES.get(id);
+        // box.item = item;
 
-        let modalHook = aceModalService.open({
-            placeItems: 'center center',
-            margin: '0',
-            component: {
-                components: {
-                    AceLightbox
-                },
-                data: () => ({
-                    box: box
-                }),
-                template: `
-                    <ace-lightbox
-                        style="width: 100vw; height: 100vh"
-                        @close="close()"
-                        :items="box.items"
-                        :item="box.item"
-                        keyboard>
-                    </ace-lightbox>
-                `,
-                methods: {
-                    close() {
-                        modalHook.close();
-                    }
-                }
-            }
-        });
+        // let modalHook = aceModalService.open({
+        //     placeItems: 'center center',
+        //     margin: '0',
+        //     component: {
+        //         components: {
+        //             AceLightbox
+        //         },
+        //         data: () => ({
+        //             box: box
+        //         }),
+        //         template: `
+        //             <ace-lightbox
+        //                 style="width: 100vw; height: 100vh"
+        //                 @close="close()"
+        //                 :items="box.items"
+        //                 :item="box.item"
+        //                 keyboard>
+        //             </ace-lightbox>
+        //         `,
+        //         methods: {
+        //             close() {
+        //                 modalHook.close();
+        //             }
+        //         }
+        //     }
+        // });
     }
 }
 

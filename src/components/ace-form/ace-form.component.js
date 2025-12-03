@@ -18,6 +18,15 @@ export const AceForm = {
     methods: {
         reset() {
             this.$el.reset();
+        },
+        submit() {
+            this.$el.submit();
+        },
+        checkValidity() {
+            return this.$el.checkValidity();
+        },
+        reportValidity() {
+            return this.$el.reportValidity();
         }
     }
 };

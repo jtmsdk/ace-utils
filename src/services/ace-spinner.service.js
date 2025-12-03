@@ -13,30 +13,30 @@ class AceSpinnerService {
     }
 
     open(options) {
-        let id = options ? options.id || getUniqueID() : DEFAULT_ID;
-        let size = options?.size || DEFAULT_SIZE;
+        // let id = options ? options.id || getUniqueID() : DEFAULT_ID;
+        // let size = options?.size || DEFAULT_SIZE;
 
-        if (this.getSpinner(id)) {
-            return this.getSpinner(id);
-        }
-        let component = {
-            components: {AceSpinner},
-            template: `<ace-spinner size="${size}"></ace-spinner>`
-        };
-        this.spinners.push(service.open({
-            id: id,
-            component: component,
-            appendTo: options?.appendTo,
-            position: (options?.appendTo && !options?.position) ? 'absolute' : options?.position || 'fixed',
-            background: options?.background || 'transparent',
-            placeItems: 'center center',
-            animation: 'none',
-            margin: '0'
-        }));
-        return {
-            id: id, 
-            close: () => this.close(id)
-        };
+        // if (this.getSpinner(id)) {
+        //     return this.getSpinner(id);
+        // }
+        // let component = {
+        //     components: {AceSpinner},
+        //     template: `<ace-spinner size="${size}"></ace-spinner>`
+        // };
+        // this.spinners.push(service.open({
+        //     id: id,
+        //     component: component,
+        //     appendTo: options?.appendTo,
+        //     position: (options?.appendTo && !options?.position) ? 'absolute' : options?.position || 'fixed',
+        //     background: options?.background || 'transparent',
+        //     placeItems: 'center center',
+        //     animation: 'none',
+        //     margin: '0'
+        // }));
+        // return {
+        //     id: id, 
+        //     close: () => this.close(id)
+        // };
     }
 
     close(id) {
