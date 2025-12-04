@@ -2,7 +2,7 @@ import {nextTick} from 'vue';
 import {AceAutofocus} from 'ace-autofocus.directive';
 import {AceFocustrap} from 'ace-focustrap.directive';
 import {AceMenu, AceOption} from 'ace-menu.component';
-import {AcePopper} from 'ace-popper.component';
+import {AcePopover} from 'ace-popover.component';
 import {AceButton} from 'ace-button.component';
 import {AceIcon} from 'ace-icon.component';
 import {iconChevronDown} from 'ace.assetimports';
@@ -15,7 +15,7 @@ export const AceSelect = {
     components: {
         AceMenu,
         AceOption,
-        AcePopper,
+        AcePopover,
         AceButton,
         AceIcon
     },
@@ -66,7 +66,7 @@ export const AceSelect = {
                     </ace-button>
                 </slot>
             </div>
-            <ace-popper 
+            <ace-popover
                 ref="popper"
                 v-if="isOpen"
                 background="transparent"
@@ -91,7 +91,7 @@ export const AceSelect = {
                         </ace-option>
                     </slot>
                 </ace-menu>
-            </ace-popper>
+            </ace-popover>
         </div>
     `,
     methods: {

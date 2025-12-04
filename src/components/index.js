@@ -22,7 +22,7 @@ export * from './ace-modal/ace-modal.component.js';
 export * from './ace-msg/ace-msg.component.js';
 export * from './ace-note/ace-note.component.js';
 export * from './ace-parallax/ace-parallax.component.js';
-export * from './ace-popper/ace-popper.component.js';
+export * from './ace-popover/ace-popover.component.js';
 export * from './ace-progressbar/ace-progressbar.component.js';
 export * from './ace-search/ace-search.component.js';
 export * from './ace-select/ace-select.component.js';

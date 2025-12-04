@@ -42,7 +42,7 @@
         "ace-navbar.component": "./components/ace-navbar/ace-navbar.component.js",
         "ace-note.component": "./components/ace-note/ace-note.component.js",
         "ace-parallax.component": "./components/ace-parallax/ace-parallax.component.js",
-        "ace-popper.component": "./components/ace-popper/ace-popper.component.js",
+        "ace-popover.component": "./components/ace-popover/ace-popover.component.js",
         "ace-progressbar.component": "./components/ace-progressbar/ace-progressbar.component.js",
         "ace-search.component": "./components/ace-search/ace-search.component.js",
         "ace-select.component": "./components/ace-select/ace-select.component.js",

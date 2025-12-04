@@ -22,7 +22,7 @@
 @import "ace-msg/ace-msg.component.css";
 @import "ace-note/ace-note.component.css";
 @import "ace-parallax/ace-parallax.component.css";
-@import "ace-popper/ace-popper.component.css";
+@import "ace-popover/ace-popover.component.css";
 @import "ace-progressbar/ace-progressbar.component.css";
 @import "ace-search/ace-search.component.css";
 @import "ace-select/ace-select.component.css";
