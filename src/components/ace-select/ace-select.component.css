@@ -11,11 +11,15 @@
     .ace-select-button {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         text-align: left;
         width: 100%;
         padding: 8px;
-        span {
-            flex-grow: 1;
+        
+        .ace-select-value {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         .ace-icon[name=chevron-down] {
             width: 0.8rem;

@@ -24,6 +24,7 @@ export const AceSelect = {
         AceFocustrap
     },
     props: {
+        autoclose: {type: Boolean, default: true},
         clearable: Boolean,
         disabled: Boolean,
         required: Boolean,
@@ -52,13 +53,15 @@ export const AceSelect = {
                         class="ace-select-button"
                         :disabled="disabled"
                         @click="open">
-                        <slot name="value">
-                            <ace-icon 
-                                v-if="getOptionIcon(option)" 
-                                :src="getOptionIcon(option)">
-                            </ace-icon>
-                            <span>{{getSelectedOptionLabel()}}</span>
-                        </slot>
+                        <div class="ace-select-value">
+                            <slot name="value">
+                                <ace-icon 
+                                    v-if="getOptionIcon(option)" 
+                                    :src="getOptionIcon(option)">
+                                </ace-icon>
+                                {{getSelectedOptionLabel()}}
+                            </slot>
+                        </div>
                         <ace-icon 
                             src="${iconChevronDown}"
                             size="0.8em">
@@ -78,8 +81,8 @@ export const AceSelect = {
                     class="ace-select-menu" 
                     v-ace-autofocus
                     v-ace-focustrap
-                    @keydown.esc="close()"
-                    @focuswithinout="close()"
+                    @keydown.esc="handleDismiss()"
+                    @focuswithinout="handleDismiss()"
                     @option="select">
                     <slot>
                         <ace-option 
@@ -95,19 +98,28 @@ export const AceSelect = {
         </div>
     `,
     methods: {
+        handleDismiss() {
+            if (this.isOpen && this.autoclose) {
+                this.close();
+            }
+        },
         open() {
             this.isOpen = true;
             nextTick(() => {
                 this.$refs.menu.$el.style.width = this.$refs.trigger.offsetWidth + 'px';
             });
         },
-        select(option, close = true) {
+        close() {
+            this.isOpen = false;
+            this.$refs?.trigger?.querySelector('button, a')?.focus();
+        },
+        select(option) {
             let value = this.getOptionValue(option);
             this.option = option;
             this.$emit('update:modelValue', value);
             this.$emit('input', value);
             if (option && option.action) option.action(value);
-            if (close) this.close();
+            if (this.autoclose) this.close();
             return value;
         },
         getSelectedOptionLabel() {
@@ -122,10 +134,6 @@ export const AceSelect = {
         },
         getOptionValue(option) {
             return (option && this.optionvalue) ? option[this.optionvalue] : option;
-        },
-        close() {
-            this.isOpen = false;
-            this.$refs.trigger.querySelector('button, a').focus();
         }
     },
     beforeUnmount() {
