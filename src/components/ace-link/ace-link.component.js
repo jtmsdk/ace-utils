@@ -1,6 +1,7 @@
 export const AceLink = {
     props: {
         to: [Object, String],
+        replace: Boolean,
         href: String,
         hash: String,
         tab: Boolean,
@@ -8,6 +9,7 @@ export const AceLink = {
     },
     template: `
         <a class="ace-link"
+            @click="handle($event)"    
             :class="{disabled: disabled}"
             :href="resolvedHref"
             :tabindex="tabindex">
@@ -27,6 +29,20 @@ export const AceLink = {
         },
         tabindex() {
             return this.disabled ? -1 : 0;
+        }
+    },
+    methods: {
+        handle() {
+            if (this.disabled) {
+                event.preventDefault();
+                return;
+            }
+            if (this.to) {
+                event.preventDefault();
+                this.replace 
+                    ? this.$router.replace(this.to)
+                    : this.$router.push(this.to);
+            }
         }
     }
 };

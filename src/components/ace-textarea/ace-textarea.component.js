@@ -7,6 +7,7 @@ export const AceTextarea = {
         modelValue: String,
         disabled: Boolean,
         required: Boolean,
+        placeholder: String,
         minrows: {type: Number, default: 3},
         maxrows: {type: Number, default: 20}
     },
@@ -27,7 +28,8 @@ export const AceTextarea = {
                 :value="modelValue"
                 @input="handleInput"
                 :disabled="disabled"
-                :required="required">
+                :required="required"
+                :placeholder="placeholder">
             </textarea>
         </div>
     `,
@@ -53,7 +55,10 @@ export const AceTextarea = {
                 return;
             }
             this.style.height = 'auto';
-            this.style.height = Math.min(Math.max(this.$refs.textarea.scrollHeight + 4, this.minHeight), this.maxHeight) + 'px';
+            this.style.height = Math.min(
+                Math.max(this.$refs.textarea.scrollHeight + 4, this.minHeight), 
+                this.maxHeight
+            ) + 'px';
         }
     }
 };

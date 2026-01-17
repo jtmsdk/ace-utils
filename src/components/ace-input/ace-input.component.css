@@ -10,6 +10,7 @@ textarea[ace-textarea] {
     padding: var(--ace-input-padding);
     border: var(--ace-border);
     border-radius: var(--ace-input-border-radius);
+    background: white;
     margin: 0;
     
     font-family: var(--ace-font-family);
@@ -46,6 +47,7 @@ textarea[ace-textarea] {
 }
 
 .ace-input[type=text],
+.ace-input[type=password],
 .ace-input[type=number],
 .ace-input[type=email],
 .ace-input[type=date],

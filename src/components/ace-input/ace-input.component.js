@@ -14,6 +14,7 @@ export const AceInput = {
         placeholder: String,
         required: Boolean,
         disabled: Boolean,
+        readonly: Boolean,
         minlength: Number,
         maxlength: Number,
         min: Number,
@@ -97,6 +98,7 @@ export const AceInput = {
                     :placeholder="placeholder"
                     :required="required"
                     :disabled="disabled"
+                    :readonly="readonly"
                     :minlength="minlength"
                     :maxlength="maxlength"
                     :min="min"

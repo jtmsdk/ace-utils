@@ -26,8 +26,17 @@ export const toDate = (value) => {
 };
 
 /**
+ * Converts a date to a date format, e.g. "29/01/2025".
+ * @param {Date|number} date the target date or timestamp.
+ * @returns {string|null}
+ */
+export const toDateString = (date) => {
+    return format(SETTINGS.DATE_FORMAT, date);
+};
+
+/**
  * Converts a date to a date-time format, e.g. "29/01/2025 14:30".
- * @param {Date|number} date the target date or timestamp
+ * @param {Date|number} date the target date or timestamp.
  * @returns {string|null}
  */
 export const toDateTimeString = (date) => {
@@ -56,3 +65,11 @@ export const toTextDateString = (date) => {
         : null;
 };
 
+/**
+ * Returns the month name of the given date.
+ * @param {Date|number} date the target date.
+ */
+export const getMonthName = (date) => {
+    const d = toDate(date);
+    return d.toLocaleString(SETTINGS.LOCALE, { month: 'long' });
+}
