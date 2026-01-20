@@ -1,6 +1,10 @@
 import {createApp, markRaw} from 'vue';
 import {getUniqueID} from 'ace-utils.service';
+import {createElement} from 'ace-dom.service';
 import {AceModal} from 'ace-modal.component';
+
+const container = createElement(`<div id="ace-modals"></div>`);
+document.body.append(container);
 
 let app = createApp({
     components: {
@@ -10,7 +14,6 @@ let app = createApp({
         modals: []
     }),
     template: `
-        Stuff.
         <!--
         <ace-modal 
             v-for="modal in modals"
