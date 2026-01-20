@@ -9,6 +9,7 @@ export * from './ace-cols/ace-cols.component.js';
 export * from './ace-dialog/ace-dialog.component.js';
 export * from './ace-error/ace-error.component.js';
 export * from './ace-figure/ace-figure.component.js';
+export * from './ace-flex/ace-flex.component.js';
 export * from './ace-footer/ace-footer.component.js';
 export * from './ace-form/ace-form.component.js';
 export * from './ace-icon/ace-icon.component.js';

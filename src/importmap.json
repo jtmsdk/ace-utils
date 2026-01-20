@@ -27,6 +27,7 @@
         "ace-error.class": "./components/ace-error/ace-error.class.js",
         "ace-error.component": "./components/ace-error/ace-error.component.js",
         "ace-figure.component": "./components/ace-figure/ace-figure.component.js",
+        "ace-flex.component": "./components/ace-flex/ace-flex.component.js",
         "ace-footer.component": "./components/ace-footer/ace-footer.component.js",
         "ace-form.component": "./components/ace-form/ace-form.component.js",
         "ace-icon.component": "./components/ace-icon/ace-icon.component.js",
