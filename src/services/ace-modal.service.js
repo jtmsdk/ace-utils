@@ -14,7 +14,6 @@ let app = createApp({
         modals: []
     }),
     template: `
-        <!--
         <ace-modal 
             v-for="modal in modals"
             :id="modal.id"
@@ -27,31 +26,30 @@ let app = createApp({
             @close="modal.onclose()">
             <component :is="modal.component"></component>
         </ace-modal>
-        -->
     `,
     methods: {
         open(options) {
-            // let self = this;
-            // let id = options.id || getUniqueID();
-            // let resolve, promise = new Promise(res => resolve = res);
-            // let close = (val) => {
-            //     self.close(id);
-            //     resolve(val);
-            // };
-            // let modalHook = {id, promise, close};
-            // let modalParams = {
-            //     id: id,
-            //     appendTo: options.appendTo || getContainer(),
-            //     animation: options.animation,
-            //     background: options.background,
-            //     placeItems: options.placeItems,
-            //     position: options.position,
-            //     margin: options.margin,
-            //     onclose: () => options.onclose && options.onclose(),
-            //     component: markRaw(options.component)
-            // };
-            // this.modals.push(modalParams);
-            // return modalHook;
+            let self = this;
+            let id = options.id || getUniqueID();
+            let resolve, promise = new Promise(res => resolve = res);
+            let close = (val) => {
+                self.close(id);
+                resolve(val);
+            };
+            let modalHook = {id, promise, close};
+            let modalParams = {
+                id: id,
+                appendTo: options.appendTo || container,
+                animation: options.animation,
+                background: options.background,
+                placeItems: options.placeItems,
+                position: options.position,
+                margin: options.margin,
+                onclose: () => options.onclose && options.onclose(),
+                component: markRaw(options.component)
+            };
+            this.modals.push(modalParams);
+            return modalHook;
         },
         close(id) {
             let i = this.modals.findIndex(m => m.id === id);

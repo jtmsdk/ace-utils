@@ -1,11 +1,10 @@
 .ace-popover {
     background: transparent;
+    overflow: visible;
+    padding: 0;
     border: 0;
 
-    &::backdrop {
-        
-    }
     &:popover-open {
-
+        display: flex;
     }
 }

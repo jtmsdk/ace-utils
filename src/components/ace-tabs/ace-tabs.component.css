@@ -15,19 +15,18 @@
         border-bottom-color: var(--ace-border-color);
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
-        background: white;
         transform: translateY(1px);
 
-        &:hover {
+        &:focus {
             box-shadow: none;
         }
-        &:focus {
+        &:hover {
             box-shadow: none;
         }
         &:active,
         &.active {
-            border: var(--ace-border);
-            border-bottom-color: transparent;
+            border-color: var(--ace-border-color);
+            border-bottom-color: transparent; 
             background: white;
             color: var(--ace-color);
         }

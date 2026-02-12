@@ -14,19 +14,6 @@
         margin-bottom: 1rem;
     }
 
-    label {
-        display: block;
-        box-sizing: border-box;
-        
-        &[required=true] {
-            &:after {
-                content: "*";
-                margin-left: 0.4em;
-                color: red;
-            }
-        }
-    }
-
     .ace-form-footer {
         display: flex;
         box-sizing: border-box;

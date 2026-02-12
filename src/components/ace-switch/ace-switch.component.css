@@ -2,8 +2,8 @@
     display: inline-block;
     box-sizing: border-box;
 
-    --ace-width: 40px;
-    --ace-height: calc(var(--ace-width) * 0.6);
+    --ace-switch-width: 40px;
+    --ace-switch-height: calc(var(--ace-switch-width) * 0.6);
     
     label {
         display: flex;
@@ -14,14 +14,17 @@
         cursor: pointer;
     }
     input {
+        all: unset;
         display: flex;
+        box-sizing: border-box;
         justify-content: flex-start;
         align-items: center;
-        border-radius: calc(var(--ace-width) * 0.4);
+        border-radius: calc(var(--ace-switch-width) * 0.4);
+        border: var(--ace-border);
         background: white;
         min-height: auto;
-        width: var(--ace-width);
-        height: var(--ace-height);
+        width: var(--ace-switch-width);
+        height: var(--ace-switch-height);
         padding: 2px 0;
         cursor: pointer;
         
@@ -29,11 +32,11 @@
             content: "";
             transition: var(--ace-transition);
             display: block;
-            width: calc(var(--ace-width) * 0.4);
-            height: calc(var(--ace-width) * 0.4);
+            width: calc(var(--ace-switch-width) * 0.4);
+            height: calc(var(--ace-switch-width) * 0.4);
             border-radius: 50%;
             border: 0;
-            transform: translateX(calc(var(--ace-width) / 10));
+            transform: translateX(calc(var(--ace-switch-width) / 10));
             background: var(--ace-border-color);
         }
         &:checked {
@@ -41,7 +44,7 @@
             border-color: var(--ace-background-color-active);
 
             &:before {
-                transform: translateX(calc(var(--ace-width) * 0.475));
+                transform: translateX(calc(var(--ace-switch-width) * 0.475));
                 background: white;
             }
         }

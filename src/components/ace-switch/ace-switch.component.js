@@ -9,9 +9,10 @@ export const AceSwitch = {
     },
     template: `
         <div class="ace-switch"
-            :style="{'--ace-width': size}">
+            :style="{'--ace-switch-width': size}">
             <label>
-                <input type="checkbox" 
+                <input 
+                    type="checkbox" 
                     :name="name"
                     :checked="modelValue"
                     @input="$emit('update:modelValue', $event.target.checked)"

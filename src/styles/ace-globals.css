@@ -78,6 +78,14 @@ q {
     font-style: italic;
 }
 
+label {
+    &[required=true]:after {
+        content: "*";
+        margin-left: 0.4em;
+        color: red;
+    }
+}
+
 mark {
 	background: var(--ace-color-blue-10);
     padding: 0 4px;
