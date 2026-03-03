@@ -11,9 +11,7 @@ export const AceModal = {
         id: String,
         closeable: {type: Boolean, default: true},
         animation: String,
-        placeItems: String,
-        background: String,
-        margin: String
+        background: String
     },
     template: `
         <dialog 
@@ -33,6 +31,7 @@ export const AceModal = {
     `,
     mounted() {
         this.$refs.dialog.showModal();
+        this.$refs.dialog.scrollTop = 0;
     },
     beforeUnmount() {
         this.$refs?.dialog?.close();
@@ -48,9 +47,7 @@ export const AceModal = {
         styles() {
             return {
                 '--ace-modal-animation': this.animation,
-                '--ace-modal-background': this.background,
-                '--ace-modal-placeItems': this.placeItems,
-                '--ace-modal-margin': this.margin
+                '--ace-modal-background': this.background
             };
         }
     }

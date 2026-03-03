@@ -1,6 +1,5 @@
 import {createRouter, createWebHashHistory} from 'vue-router';
 import {AceError} from 'ace-error.component';
-import aceSpinnerService from 'ace-spinner.service';
 
 export const createSiteRouter = (options) => {
 
@@ -22,12 +21,12 @@ export const createSiteRouter = (options) => {
     });
 
     router.beforeEach((to, from, next) => {
-        aceSpinnerService.open();
+        //aceSpinnerService.open();
         setTimeout(() => next());
     });
 
     router.afterEach(async (to, from) => {
-        aceSpinnerService.close();
+        //aceSpinnerService.close();
     });
 
     router.onError(error => {

@@ -1,17 +1,15 @@
 dialog.ace-modal {
-    --ace-modal-placeItems: start center;
     --ace-modal-background: var(--ace-background-backdrop);
     --ace-modal-animation: ace-animation-slidein-top 0.4s ease-out;
-    --ace-modal-margin: 10vh 1rem;
 
-    animation: ace-animation-fadein 0.3s ease;
-    width: 100vw;
-    height: 100vh;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 100%;
-    place-items: var(--ace-modal-placeItems);
+    place-items: start center;
+    animation: ace-animation-fadein 0.3s ease;
     background: transparent;
+    width: 100vw;
+    height: 100vh;
     border: 0;
 
     &::backdrop {
@@ -21,8 +19,8 @@ dialog.ace-modal {
     .ace-modal-body {
         display: block;
         box-sizing: border-box;
+        background: transparent;
         animation: var(--ace-modal-animation);  
-        padding: var(--ace-modal-margin);
-        max-width: 100%;
+        padding: 1rem;
     }
 }

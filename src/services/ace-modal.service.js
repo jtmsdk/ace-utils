@@ -17,14 +17,13 @@ let app = createApp({
         <ace-modal 
             v-for="modal in modals"
             :id="modal.id"
-            :appendTo="modal.appendTo"
-            :position="modal.position"
+            :closeable="modal.closeable"
             :animation="modal.animation"
             :background="modal.background"
-            :place-items="modal.placeItems"
-            :margin="modal.margin"
             @close="modal.onclose()">
-            <component :is="modal.component"></component>
+            <component 
+                :is="modal.component">
+            </component>
         </ace-modal>
     `,
     methods: {
@@ -39,12 +38,9 @@ let app = createApp({
             let modalHook = {id, promise, close};
             let modalParams = {
                 id: id,
-                appendTo: options.appendTo || container,
+                closeable: options.closeable,
                 animation: options.animation,
                 background: options.background,
-                placeItems: options.placeItems,
-                position: options.position,
-                margin: options.margin,
                 onclose: () => options.onclose && options.onclose(),
                 component: markRaw(options.component)
             };
